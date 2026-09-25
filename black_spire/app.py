@@ -1,6 +1,6 @@
-"""The Black Spire windowed app (proof-of-concept engine).
+"""The Black Spire windowed app (full game engine).
 
-Runs the slice in a pygame window: illustration on the left, story text and
+Runs the story in a pygame window: illustration on the left, story text and
 choices on the right, an ambient bed always playing, action sounds layered on
 choice, and the death bell on death.
 
@@ -54,7 +54,7 @@ class Game:
             mixer_ok = False
 
         self.screen = pygame.display.set_mode(size)
-        pygame.display.set_caption("Black Spire \u2014 a fairytale slice")
+        pygame.display.set_caption("Black Spire \u2014 a fairytale")
         self.clock = pygame.time.Clock()
         self.font_title = pygame.font.SysFont("dejavusans", 30, bold=True)
         self.font_body = pygame.font.SysFont("dejavusans", 21)
@@ -75,7 +75,7 @@ class Game:
         self.illustrations.load(scene.image)
         self.hover = None
         self.choice_rects = []
-        if scene_id == story.DEATH_SCENE:
+        if scene.kind == "death":
             self.audio.stop_ambient()
             self.audio.play_bell()
         else:
@@ -203,7 +203,8 @@ def main(argv=None):
 
     if args.list:
         for sid, scene in story.SCENES.items():
-            print("[%s] %s" % (sid, scene.title))
+            tag = " *%s*" % scene.kind.upper() if scene.kind != "scene" else ""
+            print("[%s] %s%s" % (sid, scene.title, tag))
             for i, c in enumerate(scene.choices):
                 extra = "  (sound: %s)" % c.action_sound if c.action_sound else ""
                 print("    %d. %s  -> %s%s" % (i + 1, c.label, c.target, extra))

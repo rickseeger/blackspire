@@ -1,0 +1,71 @@
+======================================================================
+BLACK SPIRE - SCENE / CHOICE / ENDING REPORT
+======================================================================
+
+Scene count      : 68
+Choice count     : 125
+Death endings    : 15
+Good endings     : 4
+Average choices  : 1.84 per scene
+
+----------------------------------------------------------------------
+EDGE INTEGRITY
+----------------------------------------------------------------------
+validate_graph() problems: 0
+Every choice resolves to a valid scene id: YES
+
+----------------------------------------------------------------------
+CHOICE-COUNT DISTRIBUTION (non-terminal scenes)
+----------------------------------------------------------------------
+  2 choice(s): 42 scenes
+  3 choice(s): 6 scenes
+  4 choice(s): 1 scenes
+
+----------------------------------------------------------------------
+REACHABILITY (forward walk from 'farm')
+----------------------------------------------------------------------
+Scenes reachable: 68 / 68
+All 68 scenes reachable from start: YES
+
+----------------------------------------------------------------------
+DEATH ENDINGS (15)
+----------------------------------------------------------------------
+  [both_slain      ] Together                path(20): farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> wife_found -> king_face -> king_fight -> both_slain
+  [courtyard_death ] The Chase               path(15): farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_wall -> wall_climb -> courtyard -> courtyard_open -> courtyard_death
+  [dragon_attack   ] The Dragon's Flame      path(10): farm -> errand -> return -> road -> mountain -> mountain_ledge -> mountain_ridge -> dragon_pass -> dragon_parley -> dragon_attack
+  [dragon_caught   ] The Dragon's Flame      path(10): farm -> errand -> return -> road -> mountain -> mountain_ledge -> mountain_ridge -> dragon_pass -> dragon_sneak -> dragon_caught
+  [dragon_wrong    ] The Dragon's Flame      path(11): farm -> errand -> return -> road -> mountain -> mountain_ledge -> mountain_ridge -> dragon_pass -> dragon_parley -> dragon_riddle -> dragon_wrong
+  [dungeon_despair ] The Long Dark           path(14): farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> dungeon_despair
+  [farmer_slain    ] The Door                path(19): farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> wife_found -> escape_run -> farmer_slain
+  [gate_fight      ] The Guards' Swords      path(12): farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_fight
+  [mountain_fall   ] The Fall                path(7): farm -> errand -> return -> road -> mountain -> mountain_ledge -> mountain_fall
+  [river_wade      ] The Current             path(7): farm -> errand -> return -> road -> wood -> wood_river -> river_wade
+  [spire_trap      ] The Spell               path(17): farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> spire_trap
+  [wall_fall       ] The Wall                path(13): farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_wall -> wall_climb -> wall_fall
+  [wife_slain      ] She Is Gone             path(20): farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> wife_found -> king_face -> spell_break -> wife_slain
+  [wolf_attack     ] The Wolves              path(9): farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wolf_attack
+  [wood_swamp      ] The Bog                 path(7): farm -> errand -> return -> road -> wood -> wood_light -> wood_swamp
+
+----------------------------------------------------------------------
+GOOD ENDINGS (4)
+----------------------------------------------------------------------
+  [good_break_spell] The Unmade Spell        path(20): farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> wife_found -> king_face -> spell_break -> good_break_spell
+  [good_dragon     ] The Dragon Freed        path(20): farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> wife_found -> king_face -> dragon_ally -> good_dragon
+  [good_escape     ] The Long Road Home      path(19): farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> wife_found -> escape_run -> good_escape
+  [good_punish     ] The King Falls          path(20): farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> wife_found -> king_face -> king_fight -> good_punish
+
+----------------------------------------------------------------------
+CAST (from characters.py)
+----------------------------------------------------------------------
+  farmer     The Farmer (you)         A wiry, sun-browned man in a patched brown tunic, with calloused hands and tired, kind eyes.
+  wife       Lena, the Farmer's Wife  A gentle woman with dark braided hair and a faded blue dress, flour dusted on her hands.
+  king       King Aldric              A tall, cold-eyed king in black and crimson robes beneath a thin golden crown.
+  wizard     The Wizard               A hunched old wizard in gray robes with a gnarled staff and a long white beard.
+  dragon     The Dragon               A vast, green-scaled dragon with smoke curling from its nostrils and old, knowing eyes.
+  herald     The Old Woman            A bent old woman in a gray shawl, with a grip strong for her years and a crow's warning on her tongue.
+  neighbor   The Neighbor             A sturdy, worried villager in a wool coat who meets the farmer at his open door.
+  captain    The Guard Captain        A broad, scarred soldier in dark steel who carries the same grief he is ordered to enforce.
+  servant    The Serving Girl         A quick, kind serving girl in an apron, carrying a tray of bread and pretending not to see the farmer.
+  queen_ghost The Queen's Ghost        A pale, translucent woman in a white gown, sad-eyed, who warns the farmer of the stolen fire.
+
+======================================================================
