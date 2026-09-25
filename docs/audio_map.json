@@ -1,0 +1,1494 @@
+{
+  "start_scene": "farm",
+  "death_bell": "bell",
+  "death_bell_file": "death_bell.wav",
+  "scenes": [
+    {
+      "scene_id": "farm",
+      "title": "The Farm",
+      "kind": "scene",
+      "ambient": "farm",
+      "ambient_file": "farm_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Run the errand to the village",
+          "target": "errand",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Feed the animals first",
+          "target": "animals",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "animals",
+      "title": "The Animals",
+      "kind": "scene",
+      "ambient": "farm",
+      "ambient_file": "farm_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Set off for the village",
+          "target": "errand",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Go inside to kiss your wife goodbye",
+          "target": "farewell",
+          "action_sound": "door",
+          "action_file": "action_door.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "farewell",
+      "title": "Farewell",
+      "kind": "scene",
+      "ambient": "farm",
+      "ambient_file": "farm_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Set off for the village",
+          "target": "errand",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Walk her to the gate and kiss her one more time",
+          "target": "errand",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "errand",
+      "title": "The Errand",
+      "kind": "scene",
+      "ambient": "village",
+      "ambient_file": "village_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Run home at once",
+          "target": "return",
+          "action_sound": "run",
+          "action_file": "action_run.wav"
+        },
+        {
+          "index": 1,
+          "label": "Ask the old woman what happened",
+          "target": "herald",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "herald",
+      "title": "The Old Woman",
+      "kind": "scene",
+      "ambient": "village",
+      "ambient_file": "village_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Run home",
+          "target": "return",
+          "action_sound": "run",
+          "action_file": "action_run.wav"
+        },
+        {
+          "index": 1,
+          "label": "Stop to thank her",
+          "target": "return",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "return",
+      "title": "Home",
+      "kind": "scene",
+      "ambient": "farm",
+      "ambient_file": "farm_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Set out for the castle",
+          "target": "road",
+          "action_sound": "gallop",
+          "action_file": "action_gallop.wav"
+        },
+        {
+          "index": 1,
+          "label": "Gather a few things first",
+          "target": "gather",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "gather",
+      "title": "What You Carry",
+      "kind": "scene",
+      "ambient": "farm",
+      "ambient_file": "farm_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Set out for the castle",
+          "target": "road",
+          "action_sound": "gallop",
+          "action_file": "action_gallop.wav"
+        },
+        {
+          "index": 1,
+          "label": "Take one last look at home",
+          "target": "road",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "road",
+      "title": "The Fork in the Road",
+      "kind": "scene",
+      "ambient": "road",
+      "ambient_file": "road_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Take the high mountain path",
+          "target": "mountain",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Take the low road through the wood",
+          "target": "wood",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "mountain",
+      "title": "The Mountain Path",
+      "kind": "scene",
+      "ambient": "mountain",
+      "ambient_file": "mountain_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Keep to the narrow ledge",
+          "target": "mountain_ledge",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Scramble up the loose rock",
+          "target": "mountain_scree",
+          "action_sound": "stone",
+          "action_file": "action_stone.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "mountain_ledge",
+      "title": "The Narrow Ledge",
+      "kind": "scene",
+      "ambient": "mountain",
+      "ambient_file": "mountain_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Edge along carefully",
+          "target": "mountain_ridge",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Lean out for a look",
+          "target": "mountain_fall",
+          "action_sound": "scream",
+          "action_file": "action_scream.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "mountain_scree",
+      "title": "Loose Rock",
+      "kind": "scene",
+      "ambient": "mountain",
+      "ambient_file": "mountain_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Dig in your heels",
+          "target": "mountain_ridge",
+          "action_sound": "stone",
+          "action_file": "action_stone.wav"
+        },
+        {
+          "index": 1,
+          "label": "Leap for the far handhold",
+          "target": "mountain_fall",
+          "action_sound": "scream",
+          "action_file": "action_scream.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "mountain_fall",
+      "title": "The Fall",
+      "kind": "death",
+      "ambient": "mountain",
+      "ambient_file": "mountain_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Try again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "mountain_ridge",
+      "title": "The Ridge",
+      "kind": "scene",
+      "ambient": "mountain",
+      "ambient_file": "mountain_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Go to the wizard's hut",
+          "target": "wizard_hut",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Press on toward the pass",
+          "target": "dragon_pass",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "wizard_hut",
+      "title": "The Wizard's Hut",
+      "kind": "scene",
+      "ambient": "mountain",
+      "ambient_file": "mountain_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Accept his warning and advice",
+          "target": "dragon_pass",
+          "action_sound": "magic",
+          "action_file": "action_magic.wav"
+        },
+        {
+          "index": 1,
+          "label": "Decline and go on alone",
+          "target": "dragon_pass",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "dragon_pass",
+      "title": "The Dragon's Pass",
+      "kind": "scene",
+      "ambient": "mountain",
+      "ambient_file": "mountain_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Speak to the dragon",
+          "target": "dragon_parley",
+          "action_sound": "roar",
+          "action_file": "action_roar.wav"
+        },
+        {
+          "index": 1,
+          "label": "Try to slip past",
+          "target": "dragon_sneak",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 2,
+          "label": "Turn back toward the wood road",
+          "target": "wood",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "dragon_parley",
+      "title": "Parley with the Dragon",
+      "kind": "scene",
+      "ambient": "mountain",
+      "ambient_file": "mountain_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Answer its riddle",
+          "target": "dragon_riddle",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Speak plainly and ask to pass",
+          "target": "dragon_free",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 2,
+          "label": "Attack",
+          "target": "dragon_attack",
+          "action_sound": "sword",
+          "action_file": "action_sword.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "dragon_riddle",
+      "title": "The Dragon's Riddle",
+      "kind": "scene",
+      "ambient": "mountain",
+      "ambient_file": "mountain_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "A secret",
+          "target": "dragon_free",
+          "action_sound": "magic",
+          "action_file": "action_magic.wav"
+        },
+        {
+          "index": 1,
+          "label": "A stone",
+          "target": "dragon_wrong",
+          "action_sound": "roar",
+          "action_file": "action_roar.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "dragon_wrong",
+      "title": "The Dragon's Flame",
+      "kind": "death",
+      "ambient": "mountain",
+      "ambient_file": "mountain_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Try again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "dragon_attack",
+      "title": "The Dragon's Flame",
+      "kind": "death",
+      "ambient": "mountain",
+      "ambient_file": "mountain_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Try again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "dragon_sneak",
+      "title": "Sneaking Past",
+      "kind": "scene",
+      "ambient": "mountain",
+      "ambient_file": "mountain_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Hold still and meet its eye",
+          "target": "dragon_parley",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Make a run for it",
+          "target": "dragon_caught",
+          "action_sound": "run",
+          "action_file": "action_run.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "dragon_caught",
+      "title": "The Dragon's Flame",
+      "kind": "death",
+      "ambient": "mountain",
+      "ambient_file": "mountain_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Try again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "dragon_free",
+      "title": "Past the Dragon",
+      "kind": "scene",
+      "ambient": "mountain",
+      "ambient_file": "mountain_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Go on toward the castle",
+          "target": "gate",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Rest a moment on the ledge",
+          "target": "gate",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "wood",
+      "title": "The Dark Wood",
+      "kind": "scene",
+      "ambient": "wood",
+      "ambient_file": "wood_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Keep to the path",
+          "target": "wood_river",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Follow the dancing lights",
+          "target": "wood_light",
+          "action_sound": "magic",
+          "action_file": "action_magic.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "wood_light",
+      "title": "The Wisps",
+      "kind": "scene",
+      "ambient": "wood",
+      "ambient_file": "wood_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Follow the lights deeper",
+          "target": "wood_swamp",
+          "action_sound": "magic",
+          "action_file": "action_magic.wav"
+        },
+        {
+          "index": 1,
+          "label": "Turn back to the path",
+          "target": "wood_river",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "wood_swamp",
+      "title": "The Bog",
+      "kind": "death",
+      "ambient": "wood",
+      "ambient_file": "wood_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Try again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "wood_river",
+      "title": "The River",
+      "kind": "scene",
+      "ambient": "wood",
+      "ambient_file": "wood_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Cross the fallen log",
+          "target": "wood_cross",
+          "action_sound": "creak",
+          "action_file": "action_creak.wav"
+        },
+        {
+          "index": 1,
+          "label": "Wade across",
+          "target": "river_wade",
+          "action_sound": "splash",
+          "action_file": "action_splash.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "river_wade",
+      "title": "The Current",
+      "kind": "death",
+      "ambient": "wood",
+      "ambient_file": "wood_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Try again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "wood_cross",
+      "title": "The Far Bank",
+      "kind": "scene",
+      "ambient": "wood",
+      "ambient_file": "wood_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Press on into the trees",
+          "target": "wood_wolf",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Stop to wring out your boots",
+          "target": "wood_wolf",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "wood_wolf",
+      "title": "The Wolves",
+      "kind": "scene",
+      "ambient": "wood",
+      "ambient_file": "wood_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Stand tall and shout",
+          "target": "wood_edge",
+          "action_sound": "wolf",
+          "action_file": "action_wolf.wav"
+        },
+        {
+          "index": 1,
+          "label": "Throw them your bread",
+          "target": "wood_edge",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 2,
+          "label": "Run",
+          "target": "wolf_attack",
+          "action_sound": "run",
+          "action_file": "action_run.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "wolf_attack",
+      "title": "The Wolves",
+      "kind": "death",
+      "ambient": "wood",
+      "ambient_file": "wood_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Try again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "wood_edge",
+      "title": "Out of the Wood",
+      "kind": "scene",
+      "ambient": "wood",
+      "ambient_file": "wood_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Go on toward the castle",
+          "target": "gate",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Circle the wall",
+          "target": "gate",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "gate",
+      "title": "The Castle Gate",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Walk up to the guards",
+          "target": "gate_guards",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Look for another way in",
+          "target": "gate_wall",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "gate_guards",
+      "title": "The Guards",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Ask to see the king",
+          "target": "gate_talk",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Rush them",
+          "target": "gate_fight",
+          "action_sound": "sword",
+          "action_file": "action_sword.wav"
+        },
+        {
+          "index": 2,
+          "label": "Back away",
+          "target": "gate",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "gate_talk",
+      "title": "The Guard Captain",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Tell him the truth",
+          "target": "dungeon",
+          "action_sound": "chains",
+          "action_file": "action_chains.wav"
+        },
+        {
+          "index": 1,
+          "label": "Try to talk your way past",
+          "target": "gate_fight",
+          "action_sound": "sword",
+          "action_file": "action_sword.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "gate_fight",
+      "title": "The Guards' Swords",
+      "kind": "death",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Try again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "gate_wall",
+      "title": "The Wall",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Climb the wall",
+          "target": "wall_climb",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Find a drain",
+          "target": "wall_drain",
+          "action_sound": "splash",
+          "action_file": "action_splash.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "wall_climb",
+      "title": "Scaling the Wall",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Keep climbing",
+          "target": "courtyard",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Slip",
+          "target": "wall_fall",
+          "action_sound": "scream",
+          "action_file": "action_scream.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "wall_fall",
+      "title": "The Wall",
+      "kind": "death",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Try again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "wall_drain",
+      "title": "The Drain",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Crawl through",
+          "target": "kitchen",
+          "action_sound": "splash",
+          "action_file": "action_splash.wav"
+        },
+        {
+          "index": 1,
+          "label": "Turn back",
+          "target": "gate",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "courtyard",
+      "title": "The Courtyard",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Cross openly",
+          "target": "courtyard_open",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Slip along the shadow",
+          "target": "kitchen",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "courtyard_open",
+      "title": "Seen in the Yard",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Surrender",
+          "target": "dungeon",
+          "action_sound": "chains",
+          "action_file": "action_chains.wav"
+        },
+        {
+          "index": 1,
+          "label": "Run",
+          "target": "courtyard_death",
+          "action_sound": "run",
+          "action_file": "action_run.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "courtyard_death",
+      "title": "The Chase",
+      "kind": "death",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Try again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "dungeon",
+      "title": "The Dungeon",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Talk to the prisoner",
+          "target": "dungeon_wizard",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Work at the lock",
+          "target": "passage",
+          "action_sound": "chains",
+          "action_file": "action_chains.wav"
+        },
+        {
+          "index": 2,
+          "label": "Give up hope",
+          "target": "dungeon_despair",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "dungeon_wizard",
+      "title": "The Prisoner",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Take his charm",
+          "target": "passage",
+          "action_sound": "magic",
+          "action_file": "action_magic.wav"
+        },
+        {
+          "index": 1,
+          "label": "Refuse and pick the lock yourself",
+          "target": "passage",
+          "action_sound": "chains",
+          "action_file": "action_chains.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "dungeon_despair",
+      "title": "The Long Dark",
+      "kind": "death",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Try again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "kitchen",
+      "title": "The Kitchen",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Hide in the larder",
+          "target": "great_hall",
+          "action_sound": "fire",
+          "action_file": "action_fire.wav"
+        },
+        {
+          "index": 1,
+          "label": "Follow the servants' stair",
+          "target": "passage",
+          "action_sound": "creak",
+          "action_file": "action_creak.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "passage",
+      "title": "The Servants' Passage",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Climb toward the Spire",
+          "target": "spire_stairs",
+          "action_sound": "creak",
+          "action_file": "action_creak.wav"
+        },
+        {
+          "index": 1,
+          "label": "Slip behind the throne",
+          "target": "great_hall",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "great_hall",
+      "title": "The Great Hall",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Slip toward the Spire stair",
+          "target": "spire_stairs",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Step out before the king",
+          "target": "throne_approach",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "throne_approach",
+      "title": "Toward the Throne",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Speak your demand",
+          "target": "throne_seen",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Slip away to the stair",
+          "target": "spire_stairs",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "throne_seen",
+      "title": "Before the Throne",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Demand your wife back",
+          "target": "throne_demand",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Turn and run",
+          "target": "courtyard_death",
+          "action_sound": "run",
+          "action_file": "action_run.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "throne_demand",
+      "title": "The Demand",
+      "kind": "scene",
+      "ambient": "castle",
+      "ambient_file": "castle_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Fight the guards",
+          "target": "gate_fight",
+          "action_sound": "sword",
+          "action_file": "action_sword.wav"
+        },
+        {
+          "index": 1,
+          "label": "Let them seize you",
+          "target": "dungeon",
+          "action_sound": "chains",
+          "action_file": "action_chains.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "spire_stairs",
+      "title": "The Spire Stairs",
+      "kind": "scene",
+      "ambient": "spire",
+      "ambient_file": "spire_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Climb to the top",
+          "target": "spire",
+          "action_sound": "creak",
+          "action_file": "action_creak.wav"
+        },
+        {
+          "index": 1,
+          "label": "Pause and look out an arrow-slit",
+          "target": "spire",
+          "action_sound": "gasp",
+          "action_file": "action_gasp.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "spire",
+      "title": "The Black Spire",
+      "kind": "scene",
+      "ambient": "spire",
+      "ambient_file": "spire_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Go to your wife",
+          "target": "wife_found",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Touch the humming device",
+          "target": "spire_trap",
+          "action_sound": "magic",
+          "action_file": "action_magic.wav"
+        },
+        {
+          "index": 2,
+          "label": "Listen to the shadows",
+          "target": "queen_ghost",
+          "action_sound": "whisper",
+          "action_file": "action_whisper.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "queen_ghost",
+      "title": "The Queen's Ghost",
+      "kind": "scene",
+      "ambient": "spire",
+      "ambient_file": "spire_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Take her secret and go to your wife",
+          "target": "wife_found",
+          "action_sound": "whisper",
+          "action_file": "action_whisper.wav"
+        },
+        {
+          "index": 1,
+          "label": "Ask her how she died",
+          "target": "wife_found",
+          "action_sound": "whisper",
+          "action_file": "action_whisper.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "spire_trap",
+      "title": "The Spell",
+      "kind": "death",
+      "ambient": "spire",
+      "ambient_file": "spire_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Try again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "wife_found",
+      "title": "Your Wife",
+      "kind": "scene",
+      "ambient": "spire",
+      "ambient_file": "spire_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Step out to face the king",
+          "target": "king_face",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        },
+        {
+          "index": 1,
+          "label": "Grab her hand and run",
+          "target": "escape_run",
+          "action_sound": "run",
+          "action_file": "action_run.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "king_face",
+      "title": "The King",
+      "kind": "scene",
+      "ambient": "spire",
+      "ambient_file": "spire_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Lunge at the king",
+          "target": "king_fight",
+          "action_sound": "sword",
+          "action_file": "action_sword.wav"
+        },
+        {
+          "index": 1,
+          "label": "Strike at the dragon-fire's heart",
+          "target": "spell_break",
+          "action_sound": "fire",
+          "action_file": "action_fire.wav"
+        },
+        {
+          "index": 2,
+          "label": "Cry out to the dragon to be free",
+          "target": "dragon_ally",
+          "action_sound": "roar",
+          "action_file": "action_roar.wav"
+        },
+        {
+          "index": 3,
+          "label": "Grab her and run",
+          "target": "escape_run",
+          "action_sound": "run",
+          "action_file": "action_run.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "king_fight",
+      "title": "The Fight",
+      "kind": "scene",
+      "ambient": "spire",
+      "ambient_file": "spire_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Seize the fallen torch and strike",
+          "target": "good_punish",
+          "action_sound": "sword",
+          "action_file": "action_sword.wav"
+        },
+        {
+          "index": 1,
+          "label": "Tackle him into the flames",
+          "target": "both_slain",
+          "action_sound": "fire",
+          "action_file": "action_fire.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "spell_break",
+      "title": "The Unmaking",
+      "kind": "scene",
+      "ambient": "spire",
+      "ambient_file": "spire_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Quench the fire for good",
+          "target": "good_break_spell",
+          "action_sound": "magic",
+          "action_file": "action_magic.wav"
+        },
+        {
+          "index": 1,
+          "label": "Turn to check on your wife",
+          "target": "wife_slain",
+          "action_sound": "sword",
+          "action_file": "action_sword.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "escape_run",
+      "title": "The Long Stair",
+      "kind": "scene",
+      "ambient": "spire",
+      "ambient_file": "spire_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Run hand in hand, do not look back",
+          "target": "good_escape",
+          "action_sound": "run",
+          "action_file": "action_run.wav"
+        },
+        {
+          "index": 1,
+          "label": "Stop to bar the door behind you",
+          "target": "farmer_slain",
+          "action_sound": "door",
+          "action_file": "action_door.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "dragon_ally",
+      "title": "The Dragon's Chains",
+      "kind": "scene",
+      "ambient": "spire",
+      "ambient_file": "spire_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Let the dragon take its freedom",
+          "target": "good_dragon",
+          "action_sound": "roar",
+          "action_file": "action_roar.wav"
+        },
+        {
+          "index": 1,
+          "label": "Step between the dragon and the king",
+          "target": "both_slain",
+          "action_sound": "roar",
+          "action_file": "action_roar.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "good_punish",
+      "title": "The King Falls",
+      "kind": "good",
+      "ambient": "spire",
+      "ambient_file": "spire_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Play again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "good_break_spell",
+      "title": "The Unmade Spell",
+      "kind": "good",
+      "ambient": "spire",
+      "ambient_file": "spire_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Play again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "good_escape",
+      "title": "The Long Road Home",
+      "kind": "good",
+      "ambient": "farm",
+      "ambient_file": "farm_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Play again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "good_dragon",
+      "title": "The Dragon Freed",
+      "kind": "good",
+      "ambient": "mountain",
+      "ambient_file": "mountain_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Play again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "wife_slain",
+      "title": "She Is Gone",
+      "kind": "death",
+      "ambient": "spire",
+      "ambient_file": "spire_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Try again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "both_slain",
+      "title": "Together",
+      "kind": "death",
+      "ambient": "spire",
+      "ambient_file": "spire_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Try again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    },
+    {
+      "scene_id": "farmer_slain",
+      "title": "The Door",
+      "kind": "death",
+      "ambient": "spire",
+      "ambient_file": "spire_ambient.wav",
+      "choices": [
+        {
+          "index": 0,
+          "label": "Try again",
+          "target": "farm",
+          "action_sound": "steps",
+          "action_file": "action_steps.wav"
+        }
+      ]
+    }
+  ]
+}

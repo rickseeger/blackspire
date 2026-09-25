@@ -2,9 +2,13 @@
 
 Model: one always-on ambient bed per scene (looped on a reserved channel),
 one-shot action sounds layered on top when a choice plays out, and a single
-large death-bell toll on the death scene.  All assets are procedurally
-generated (see tools/generate_assets.py), so there are no licensing concerns
-and the files stay small.
+large death-bell toll on the death scene.
+
+The scene -> ambient bed and choice -> action-sound relationships live in
+``story.py`` (the ``Scene.ambient`` and ``Choice.action_sound`` fields); this
+module maps those ids to on-disk wav files under ``assets/audio/``.  Every
+asset is procedurally generated (see ``tools/generate_assets.py``), so there
+are no licensing concerns and the files stay small.
 """
 
 import os
@@ -16,20 +20,54 @@ from .story import DEATH_BELL
 
 ASSET_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "audio")
 
-# ambient bed -> wav filename ("none" means silence)
+# ambient bed id -> wav filename (looped on channel 0)
 AMBIENTS = {
-    "farm": "farm_ambient.wav",
-    "road": "road_ambient.wav",
-    "none": None,
+    "farm": "farm_ambient.wav",        # chickens + sheep + morning wind
+    "village": "village_ambient.wav",  # market murmur + distant bell + rooster
+    "road": "road_ambient.wav",        # open-road wind + distant hooves
+    "mountain": "mountain_ambient.wav",# high wind + skittering stones
+    "wood": "wood_ambient.wav",        # leaves + crickets + owl + wolf
+    "castle": "castle_ambient.wav",    # torch crackle + court murmur + stone
+    "spire": "spire_ambient.wav",      # magical hum + fire roar + high wind
 }
 
 # one-shot action / effect sound id -> wav filename
 ACTIONS = {
-    "run": "action_run.wav",
-    "gallop": "action_gallop.wav",
-    "scream": "action_scream.wav",
-    "bell": "death_bell.wav",
+    "steps": "action_steps.wav",       # soft walking footsteps
+    "run": "action_run.wav",           # running footsteps
+    "gallop": "action_gallop.wav",     # a horse galloping
+    "scream": "action_scream.wav",     # a scream on a fall
+    "door": "action_door.wav",         # a door creaking open
+    "fire": "action_fire.wav",         # flame whoosh / crackle
+    "sword": "action_sword.wav",       # a sword clash
+    "splash": "action_splash.wav",     # water splashing
+    "wolf": "action_wolf.wav",         # a wolf howl
+    "roar": "action_roar.wav",         # a dragon roar
+    "stone": "action_stone.wav",       # rocks clattering
+    "magic": "action_magic.wav",       # a magical shimmer
+    "whisper": "action_whisper.wav",   # a ghostly whisper
+    "creak": "action_creak.wav",       # a stair / floorboard creak
+    "gasp": "action_gasp.wav",         # a sharp breath
+    "chains": "action_chains.wav",     # iron chains clanking
+    "bell": "death_bell.wav",          # the single death bell
 }
+
+
+def validate_audio(scenes):
+    """Return a list of problems linking ``scenes`` to this module's ids.
+
+    An empty list means every scene's ambient bed and every choice's action
+    sound resolves to a known asset id.
+    """
+    problems = []
+    for sid, scene in scenes.items():
+        if scene.ambient not in AMBIENTS:
+            problems.append("%s ambient %r unknown" % (sid, scene.ambient))
+        for i, choice in enumerate(scene.choices):
+            if choice.action_sound not in ACTIONS:
+                problems.append("%s choice %d action_sound %r unknown"
+                                % (sid, i, choice.action_sound))
+    return problems
 
 
 class AudioManager:
@@ -39,6 +77,7 @@ class AudioManager:
         self.current_ambient = None
         self.bell_count = 0
         self.last_action = None
+        self.action_log = []      # every action/bell event, in order
         self._loaded = {}
 
     def _path(self, filename):
@@ -68,7 +107,7 @@ class AudioManager:
         self.current_ambient = ambient_id
         filename = AMBIENTS.get(ambient_id)
         if not filename:
-            return  # "none" => silence
+            raise KeyError("unknown ambient id %r" % ambient_id)
         snd = self.load(ambient_id)
         pygame.mixer.Channel(0).play(snd, loops=-1)
         pygame.mixer.Channel(0).set_volume(0.55)
@@ -81,6 +120,7 @@ class AudioManager:
     # -- one-shot action sounds ---------------------------------------
     def play_action(self, sound_id, volume=0.9):
         self.last_action = sound_id
+        self.action_log.append(sound_id)
         if not self.enabled:
             return
         snd = self.load(sound_id)

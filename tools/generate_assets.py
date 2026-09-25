@@ -214,12 +214,355 @@ def make_bell(freq=174.0, dur=5.5):
     return [0.85 * x / peak for x in out]
 
 
+
+
+# --------------------------------------------------------------------------
+# node-4 audio layer: additional scene ambients + one-shot action sounds
+# --------------------------------------------------------------------------
+
+def _sine(freq, dur, amp):
+    n = int(dur * SAMPLE_RATE)
+    return [amp * math.sin(2 * math.pi * freq * i / SAMPLE_RATE) for i in range(n)]
+
+
+def _chirp(f0, f1, dur, amp):
+    n = int(dur * SAMPLE_RATE)
+    out = []
+    phase = 0.0
+    for i in range(n):
+        f = f0 + (f1 - f0) * (i / n)
+        phase += 2 * math.pi * f / SAMPLE_RATE
+        out.append(amp * math.sin(phase))
+    return out
+
+
+def _normalize(samples, peak=0.9):
+    m = max(1e-9, max(abs(x) for x in samples))
+    return [peak * x / m for x in samples]
+
+
+def _adsr(samples, attack, release):
+    n = len(samples)
+    a = min(max(1, int(attack * SAMPLE_RATE)), n)
+    r = min(max(1, int(release * SAMPLE_RATE)), n)
+    out = list(samples)
+    for i in range(a):
+        out[i] *= i / a
+    for i in range(r):
+        out[n - 1 - i] *= i / r
+    return out
+
+
+def _bandpass(samples, alpha=0.08):
+    lo = _lowpass(samples, alpha=alpha)
+    hi = [s - l for s, l in zip(samples, lo)]
+    return _lowpass(hi, alpha=alpha)
+
+
+def _pulses(dur, rate, freq, amp, jitter=0.0):
+    """A train of short decaying tone pips (crickets, clatter, crackle)."""
+    rng = random.Random(int(freq * 1000 + rate * 7))
+    n = int(dur * SAMPLE_RATE)
+    out = [0.0] * n
+    step = max(1, int(SAMPLE_RATE / rate))
+    pos = 0
+    while pos < n:
+        ln = int(0.02 * SAMPLE_RATE)
+        for j in range(ln):
+            if pos + j < n:
+                env = math.exp(-j / (ln * 0.3))
+                out[pos + j] += amp * env * math.sin(
+                    2 * math.pi * freq * j / SAMPLE_RATE)
+        pos += step + int(rng.uniform(-jitter, jitter) * SAMPLE_RATE)
+    return out
+
+
+def make_village_ambient(duration=12.0):
+    rng = random.Random(4321)
+    n = int(duration * SAMPLE_RATE)
+    out = [0.0] * n
+    # low crowd murmur
+    murmur = _lowpass(_noise(duration, 0.8, rng), alpha=0.06)
+    for i in range(n):
+        out[i] += 0.16 * murmur[i]
+    # distant church bell, periodic
+    bell = _sine(220.0, 2.5, 0.5)
+    bell = _adsr(bell, 0.01, 2.0)
+    for _ in range(4):
+        _mix_into(out, [0.5 * b for b in bell], int(rng.uniform(0.5, 10.0) * SAMPLE_RATE))
+    # a rooster-ish two-tone call
+    call = _chirp(800, 500, 0.25, 0.5) + _chirp(500, 300, 0.35, 0.4)
+    _mix_into(out, call, int(2.0 * SAMPLE_RATE))
+    _mix_into(out, call, int(7.0 * SAMPLE_RATE))
+    # distant cart rumbles
+    rumble = _lowpass(_noise(0.8, 0.9, rng), alpha=0.04)
+    _mix_into(out, [0.35 * x for x in rumble], int(5.0 * SAMPLE_RATE))
+    return _normalize(_fade_edges(out, 0.5), 0.55)
+
+
+def make_mountain_ambient(duration=12.0):
+    rng = random.Random(8765)
+    n = int(duration * SAMPLE_RATE)
+    out = [0.0] * n
+    # high thin wind
+    wind = _bandpass(_noise(duration, 0.9, rng), alpha=0.03)
+    for i in range(n):
+        swell = 0.5 + 0.5 * math.sin(2 * math.pi * 0.11 * i / SAMPLE_RATE)
+        out[i] += 0.30 * swell * wind[i]
+    # occasional skittering stones
+    for pos in (2.0, 5.5, 9.0):
+        clatter = _pulses(1.2, 18, 1800, 0.5, jitter=0.1)
+        _mix_into(out, [0.4 * x for x in clatter], int(pos * SAMPLE_RATE))
+    return _normalize(_fade_edges(out, 0.5), 0.55)
+
+
+def make_wood_ambient(duration=12.0):
+    rng = random.Random(2468)
+    n = int(duration * SAMPLE_RATE)
+    out = [0.0] * n
+    # wind through leaves (lighter bandpass)
+    leaves = _bandpass(_noise(duration, 0.8, rng), alpha=0.05)
+    for i in range(n):
+        out[i] += 0.22 * leaves[i]
+    # crickets, steady high chirp
+    crickets = _pulses(duration, 26, 4200, 0.20, jitter=0.05)
+    for i in range(n):
+        out[i] += crickets[i]
+    # owl hoots
+    hoot = _adsr(_sine(340, 0.5, 0.6), 0.02, 0.25) + _adsr(_sine(260, 0.6, 0.5), 0.02, 0.3)
+    _mix_into(out, hoot, int(3.0 * SAMPLE_RATE))
+    _mix_into(out, hoot, int(8.5 * SAMPLE_RATE))
+    # a distant wolf howl once
+    howl = _normalize(_adsr(_chirp(300, 560, 0.9, 0.7) + _chirp(560, 380, 0.9, 0.6), 0.1, 0.4), 0.5)
+    _mix_into(out, howl, int(10.0 * SAMPLE_RATE))
+    return _normalize(_fade_edges(out, 0.5), 0.5)
+
+
+def make_castle_ambient(duration=12.0):
+    rng = random.Random(1357)
+    n = int(duration * SAMPLE_RATE)
+    out = [0.0] * n
+    # low stone-cold drone
+    drone = _lowpass(_noise(duration, 0.7, rng), alpha=0.02)
+    for i in range(n):
+        out[i] += 0.18 * drone[i]
+    # torch crackle (fire)
+    fire = _lowpass(_noise(duration, 0.9, rng), alpha=0.12)
+    crackle = _pulses(duration, 40, 300, 0.4, jitter=0.2)
+    for i in range(n):
+        out[i] += 0.10 * fire[i] + 0.14 * crackle[i]
+    # distant court murmur
+    murmur = _lowpass(_noise(duration, 0.7, rng), alpha=0.05)
+    for i in range(n):
+        out[i] += 0.08 * murmur[i]
+    return _normalize(_fade_edges(out, 0.5), 0.5)
+
+
+def make_spire_ambient(duration=12.0):
+    rng = random.Random(8642)
+    n = int(duration * SAMPLE_RATE)
+    out = [0.0] * n
+    # low magical hum with slow beating
+    for i in range(n):
+        t = i / SAMPLE_RATE
+        hum = (0.5 * math.sin(2 * math.pi * 55 * t) +
+               0.35 * math.sin(2 * math.pi * 55.6 * t) +
+               0.25 * math.sin(2 * math.pi * 110 * t))
+        out[i] += 0.28 * hum
+    # deep fire roar
+    roar = _lowpass(_noise(duration, 1.0, rng), alpha=0.02)
+    for i in range(n):
+        out[i] += 0.20 * roar[i]
+    # high wind howl at the top
+    howl = _bandpass(_noise(duration, 0.8, rng), alpha=0.03)
+    for i in range(n):
+        swell = 0.4 + 0.6 * (0.5 + 0.5 * math.sin(2 * math.pi * 0.07 * i / SAMPLE_RATE))
+        out[i] += 0.16 * swell * howl[i]
+    return _normalize(_fade_edges(out, 0.5), 0.5)
+
+
+def make_steps():
+    out = []
+    for k in range(4):
+        out += _thud(72, 0.05, 0.5)
+        out += [0.0] * int(0.22 * SAMPLE_RATE)
+    return _normalize(out, 0.7)
+
+
+def make_door():
+    rng = random.Random(313)
+    creak = _chirp(180, 90, 1.1, 0.7)
+    wood = _bandpass(_noise(1.1, 0.5, rng), alpha=0.1)
+    out = [c + 0.25 * w for c, w in zip(creak, wood)]
+    out += _thud(60, 0.06, 0.6)  # latch clunk at the end
+    return _normalize(_adsr(out, 0.01, 0.3), 0.75)
+
+
+def make_fire():
+    rng = random.Random(7777)
+    n = int(1.4 * SAMPLE_RATE)
+    base = _lowpass(_noise(1.4, 0.9, rng), alpha=0.15)
+    crackle = _pulses(1.4, 55, 400, 0.7, jitter=0.3)
+    out = [0.6 * b + 0.7 * c for b, c in zip(base, crackle)]
+    return _normalize(_adsr(out, 0.02, 0.5), 0.8)
+
+
+def make_sword():
+    rng = random.Random(555)
+    n = int(0.9 * SAMPLE_RATE)
+    out = [0.0] * n
+    for f in (2400, 3600, 5100, 7200):
+        for i in range(n):
+            out[i] += 0.5 * math.sin(2 * math.pi * f * i / SAMPLE_RATE) * math.exp(-i / (n * 0.12))
+    clash = _highpass_noise(n, rng)
+    for i in range(n):
+        out[i] += 0.6 * clash[i] * math.exp(-i / (n * 0.05))
+    return _normalize(out, 0.8)
+
+
+def _highpass_noise(n, rng):
+    x = [rng.random() * 2 - 1 for _ in range(n)]
+    lo = _lowpass(x, alpha=0.05)
+    return [a - b for a, b in zip(x, lo)]
+
+
+def make_splash():
+    rng = random.Random(989)
+    n = int(0.9 * SAMPLE_RATE)
+    noise = _bandpass(_noise(0.9, 1.0, rng), alpha=0.08)
+    out = []
+    for i in range(n):
+        out.append(noise[i] * math.exp(-i / (n * 0.28)))
+    out += _thud(90, 0.06, 0.5)
+    return _normalize(out, 0.8)
+
+
+def make_wolf():
+    rng = random.Random(414)
+    howl = _chirp(280, 620, 0.8, 0.8) + _chirp(620, 340, 0.9, 0.7)
+    growl = _lowpass(_noise(1.6, 0.6, rng), alpha=0.06)
+    out = list(howl)
+    for i, g in enumerate(growl):
+        if i < len(out):
+            out[i] += 0.3 * g * (i / len(growl))
+    return _normalize(_adsr(out, 0.05, 0.4), 0.8)
+
+
+def make_roar():
+    rng = random.Random(902)
+    n = int(2.2 * SAMPLE_RATE)
+    out = [0.0] * n
+    for i in range(n):
+        t = i / n
+        f = 70 + 40 * math.sin(2 * math.pi * 5 * t)
+        env = math.sin(math.pi * min(1.0, t * 1.2)) * math.exp(-0.3 * t)
+        out[i] = 0.8 * env * math.sin(2 * math.pi * f * i / SAMPLE_RATE)
+    noise = _lowpass(_noise(2.2, 1.0, rng), alpha=0.03)
+    for i in range(n):
+        out[i] += 0.5 * noise[i] * math.exp(-i / (n * 0.4))
+    return _normalize(out, 0.85)
+
+
+def make_stone():
+    rng = random.Random(616)
+    n = int(1.1 * SAMPLE_RATE)
+    out = [0.0] * n
+    for _ in range(9):
+        f = rng.uniform(900, 2600)
+        ln = int(rng.uniform(0.03, 0.09) * SAMPLE_RATE)
+        pos = int(rng.uniform(0, 0.8) * SAMPLE_RATE)
+        for j in range(ln):
+            if pos + j < n:
+                out[pos + j] += 0.5 * math.sin(2 * math.pi * f * j / SAMPLE_RATE) * math.exp(-j / (ln * 0.25))
+    return _normalize(out, 0.7)
+
+
+def make_magic():
+    n = int(1.3 * SAMPLE_RATE)
+    out = [0.0] * n
+    for f, amp in ((880, 0.4), (1174.66, 0.3), (1568, 0.25), (2093, 0.18), (2637, 0.12)):
+        for i in range(n):
+            out[i] += amp * math.sin(2 * math.pi * f * i / SAMPLE_RATE) * math.exp(-i / (n * 0.5))
+    shimmer = _pulses(1.3, 30, 5200, 0.2, jitter=0.1)
+    for i in range(n):
+        out[i] += shimmer[i] * math.exp(-i / (n * 0.6))
+    return _normalize(_adsr(out, 0.01, 0.4), 0.75)
+
+
+def make_whisper():
+    rng = random.Random(303)
+    n = int(1.3 * SAMPLE_RATE)
+    noise = _bandpass(_noise(1.3, 0.9, rng), alpha=0.25)
+    out = []
+    for i in range(n):
+        t = i / SAMPLE_RATE
+        # a few "syllables" of breath
+        syl = 0.3 + 0.7 * (0.5 + 0.5 * math.sin(2 * math.pi * 6.5 * t))
+        out.append(noise[i] * syl)
+    return _normalize(_adsr(out, 0.05, 0.3), 0.7)
+
+
+def make_creak():
+    rng = random.Random(721)
+    n = int(0.9 * SAMPLE_RATE)
+    creak = _chirp(160, 70, 0.9, 0.8)
+    wood = _bandpass(_noise(0.9, 0.5, rng), alpha=0.08)
+    out = [c + 0.3 * w for c, w in zip(creak, wood)]
+    return _normalize(_adsr(out, 0.02, 0.2), 0.7)
+
+
+def make_gasp():
+    rng = random.Random(149)
+    n = int(0.5 * SAMPLE_RATE)
+    noise = _bandpass(_noise(0.5, 0.9, rng), alpha=0.2)
+    out = []
+    for i in range(n):
+        t = i / n
+        out.append(noise[i] * math.sin(math.pi * t) * (0.4 + 0.6 * t))
+    return _normalize(out, 0.8)
+
+
+def make_chains():
+    rng = random.Random(858)
+    n = int(1.1 * SAMPLE_RATE)
+    out = [0.0] * n
+    for _ in range(7):
+        f = rng.uniform(1800, 4200)
+        ln = int(rng.uniform(0.02, 0.06) * SAMPLE_RATE)
+        pos = int(rng.uniform(0, 0.8) * SAMPLE_RATE)
+        for j in range(ln):
+            if pos + j < n:
+                out[pos + j] += 0.5 * math.sin(2 * math.pi * f * j / SAMPLE_RATE) * math.exp(-j / (ln * 0.2))
+    rattle = _bandpass(_noise(0.4, 0.5, rng), alpha=0.15)
+    _mix_into(out, [0.5 * x for x in rattle], int(0.3 * SAMPLE_RATE))
+    return _normalize(out, 0.75)
+
+
+
 AUDIO_BUILDERS = {
     "farm_ambient.wav": make_farm_ambient,
     "road_ambient.wav": make_road_ambient,
+    "village_ambient.wav": make_village_ambient,
+    "mountain_ambient.wav": make_mountain_ambient,
+    "wood_ambient.wav": make_wood_ambient,
+    "castle_ambient.wav": make_castle_ambient,
+    "spire_ambient.wav": make_spire_ambient,
     "action_run.wav": make_run,
     "action_gallop.wav": make_gallop,
     "action_scream.wav": make_scream,
+    "action_steps.wav": make_steps,
+    "action_door.wav": make_door,
+    "action_fire.wav": make_fire,
+    "action_sword.wav": make_sword,
+    "action_splash.wav": make_splash,
+    "action_wolf.wav": make_wolf,
+    "action_roar.wav": make_roar,
+    "action_stone.wav": make_stone,
+    "action_magic.wav": make_magic,
+    "action_whisper.wav": make_whisper,
+    "action_creak.wav": make_creak,
+    "action_gasp.wav": make_gasp,
+    "action_chains.wav": make_chains,
     "death_bell.wav": make_bell,
 }
 

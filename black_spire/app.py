@@ -75,11 +75,12 @@ class Game:
         self.illustrations.load(scene.image)
         self.hover = None
         self.choice_rects = []
+        # every scene plays its ambient bed by default; a death scene adds
+        # the single bell toll on top (it keeps the ambient of the place
+        # where the farmer fell).
+        self.audio.play_ambient(scene.ambient)
         if scene.kind == "death":
-            self.audio.stop_ambient()
             self.audio.play_bell()
-        else:
-            self.audio.play_ambient(scene.ambient)
 
     def navigate(self, choice_index):
         choice = self.story.choices()[choice_index]
@@ -193,7 +194,7 @@ class Game:
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="Black Spire \u2014 proof-of-concept slice")
+    parser = argparse.ArgumentParser(description="Black Spire \u2014 a fairytale")
     parser.add_argument("--frames", type=int, default=None,
                         help="auto-quit after N frames (headless/CI)")
     parser.add_argument("--scene", default=None, help="start at a given scene id")

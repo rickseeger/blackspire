@@ -183,8 +183,8 @@ class AssetTests(unittest.TestCase):
             self.assertGreater(snd.get_length(), 0.0, name)
 
     def test_ambient_beds_and_bell_exist(self):
-        self.assertIn("farm", audio.AMBIENTS)
-        self.assertIn("road", audio.AMBIENTS)
+        for amb in ("farm", "village", "road", "mountain", "wood", "castle", "spire"):
+            self.assertIn(amb, audio.AMBIENTS)
         self.assertIn("bell", audio.ACTIONS)  # the single death bell
 
 
@@ -227,10 +227,10 @@ class RenderTests(unittest.TestCase):
     def test_choice_triggers_action_sound(self):
         game = Game()
         try:
-            game.navigate(0)  # farm -> errand (no action sound)
+            game.navigate(0)  # farm -> errand (soft steps)
             self.assertEqual(game.story.current, "errand")
-            self.assertIsNone(game.audio.last_action)
-            game.navigate(0)  # errand -> return (action sound "run")
+            self.assertEqual(game.audio.last_action, "steps")
+            game.navigate(0)  # errand -> return (running)
             self.assertEqual(game.story.current, "return")
             self.assertEqual(game.audio.last_action, "run")
         finally:

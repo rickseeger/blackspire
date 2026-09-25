@@ -31,7 +31,7 @@ class Choice:
 class Scene:
     id: str
     title: str
-    ambient: str          # ambient loop id ("none" for silence)
+    ambient: str          # ambient loop id (one of audio.AMBIENTS)
     image: str            # illustration asset stem
     text: str             # body prose
     choices: Tuple[Choice, ...] = ()
@@ -52,8 +52,8 @@ SCENES = {
             "You are a poor farmer. Today you have an errand in the village."
         ),
         choices=(
-            Choice("Run the errand to the village", "errand"),
-            Choice("Feed the animals first", "animals"),
+            Choice("Run the errand to the village", "errand", action_sound="steps"),
+            Choice("Feed the animals first", "animals", action_sound="steps"),
         ),
     ),
     "animals": Scene(
@@ -67,8 +67,8 @@ SCENES = {
             "the errand will not wait."
         ),
         choices=(
-            Choice("Set off for the village", "errand"),
-            Choice("Go inside to kiss your wife goodbye", "farewell"),
+            Choice("Set off for the village", "errand", action_sound="steps"),
+            Choice("Go inside to kiss your wife goodbye", "farewell", action_sound="door"),
         ),
     ),
     "farewell": Scene(
@@ -83,14 +83,14 @@ SCENES = {
             "You promise her you will."
         ),
         choices=(
-            Choice("Set off for the village", "errand"),
-            Choice("Walk her to the gate and kiss her one more time", "errand"),
+            Choice("Set off for the village", "errand", action_sound="steps"),
+            Choice("Walk her to the gate and kiss her one more time", "errand", action_sound="steps"),
         ),
     ),
     "errand": Scene(
         id="errand",
         title="The Errand",
-        ambient="farm",
+        ambient="village",
         image="errand",
         text=(
             "You walk the dusty road to the village. You sell your eggs and "
@@ -99,13 +99,13 @@ SCENES = {
         ),
         choices=(
             Choice("Run home at once", "return", action_sound="run"),
-            Choice("Ask the old woman what happened", "herald"),
+            Choice("Ask the old woman what happened", "herald", action_sound="steps"),
         ),
     ),
     "herald": Scene(
         id="herald",
         title="The Old Woman",
-        ambient="farm",
+        ambient="village",
         image="errand",
         text=(
             "The old woman's grip is strong for her years.\n\n"
@@ -116,7 +116,7 @@ SCENES = {
         ),
         choices=(
             Choice("Run home", "return", action_sound="run"),
-            Choice("Stop to thank her", "return"),
+            Choice("Stop to thank her", "return", action_sound="steps"),
         ),
     ),
     "return": Scene(
@@ -133,7 +133,7 @@ SCENES = {
         ),
         choices=(
             Choice("Set out for the castle", "road", action_sound="gallop"),
-            Choice("Gather a few things first", "gather"),
+            Choice("Gather a few things first", "gather", action_sound="steps"),
         ),
     ),
     "gather": Scene(
@@ -149,7 +149,7 @@ SCENES = {
         ),
         choices=(
             Choice("Set out for the castle", "road", action_sound="gallop"),
-            Choice("Take one last look at home", "road"),
+            Choice("Take one last look at home", "road", action_sound="steps"),
         ),
     ),
 
@@ -165,8 +165,8 @@ SCENES = {
             "One path climbs the mountain. The other sinks into a dark wood."
         ),
         choices=(
-            Choice("Take the high mountain path", "mountain"),
-            Choice("Take the low road through the wood", "wood"),
+            Choice("Take the high mountain path", "mountain", action_sound="steps"),
+            Choice("Take the low road through the wood", "wood", action_sound="steps"),
         ),
     ),
 
@@ -174,7 +174,7 @@ SCENES = {
     "mountain": Scene(
         id="mountain",
         title="The Mountain Path",
-        ambient="road",
+        ambient="mountain",
         image="road",
         text=(
             "The mountain path is steep and narrow, cut into the rock. Loose "
@@ -182,14 +182,14 @@ SCENES = {
             "your coat."
         ),
         choices=(
-            Choice("Keep to the narrow ledge", "mountain_ledge"),
-            Choice("Scramble up the loose rock", "mountain_scree"),
+            Choice("Keep to the narrow ledge", "mountain_ledge", action_sound="steps"),
+            Choice("Scramble up the loose rock", "mountain_scree", action_sound="stone"),
         ),
     ),
     "mountain_ledge": Scene(
         id="mountain_ledge",
         title="The Narrow Ledge",
-        ambient="road",
+        ambient="mountain",
         image="road",
         text=(
             "The path narrows to a ledge no wider than your shoulders. Far "
@@ -197,14 +197,14 @@ SCENES = {
             "cold stone and edge along."
         ),
         choices=(
-            Choice("Edge along carefully", "mountain_ridge"),
+            Choice("Edge along carefully", "mountain_ridge", action_sound="steps"),
             Choice("Lean out for a look", "mountain_fall", action_sound="scream"),
         ),
     ),
     "mountain_scree": Scene(
         id="mountain_scree",
         title="Loose Rock",
-        ambient="road",
+        ambient="mountain",
         image="road",
         text=(
             "The rock under your feet is loose, a slope of broken stone that "
@@ -212,26 +212,26 @@ SCENES = {
             "down with it."
         ),
         choices=(
-            Choice("Dig in your heels", "mountain_ridge"),
+            Choice("Dig in your heels", "mountain_ridge", action_sound="stone"),
             Choice("Leap for the far handhold", "mountain_fall", action_sound="scream"),
         ),
     ),
     "mountain_fall": Scene(
         id="mountain_fall",
         title="The Fall",
-        ambient="none",
+        ambient="mountain",
         image="death",
         text=(
             "The stone gives way. You fall. The wind screams past you, and "
             "the world spins, and then there is nothing at all."
         ),
-        choices=(Choice("Try again", "farm"),),
+        choices=(Choice("Try again", "farm", action_sound="steps"),),
         kind="death",
     ),
     "mountain_ridge": Scene(
         id="mountain_ridge",
         title="The Ridge",
-        ambient="road",
+        ambient="mountain",
         image="road",
         text=(
             "You reach the ridge and stop to catch your breath. Ahead, the "
@@ -240,14 +240,14 @@ SCENES = {
             "castle."
         ),
         choices=(
-            Choice("Go to the wizard's hut", "wizard_hut"),
-            Choice("Press on toward the pass", "dragon_pass"),
+            Choice("Go to the wizard's hut", "wizard_hut", action_sound="steps"),
+            Choice("Press on toward the pass", "dragon_pass", action_sound="steps"),
         ),
     ),
     "wizard_hut": Scene(
         id="wizard_hut",
         title="The Wizard's Hut",
-        ambient="road",
+        ambient="mountain",
         image="road",
         text=(
             "The hut is small and crooked, hung with herbs and bone "
@@ -260,14 +260,14 @@ SCENES = {
             "Spire. Remember that, farmer.\""
         ),
         choices=(
-            Choice("Accept his warning and advice", "dragon_pass"),
-            Choice("Decline and go on alone", "dragon_pass"),
+            Choice("Accept his warning and advice", "dragon_pass", action_sound="magic"),
+            Choice("Decline and go on alone", "dragon_pass", action_sound="steps"),
         ),
     ),
     "dragon_pass": Scene(
         id="dragon_pass",
         title="The Dragon's Pass",
-        ambient="road",
+        ambient="mountain",
         image="road",
         text=(
             "The pass opens into a wide ledge of scorched stone. A dragon "
@@ -276,15 +276,15 @@ SCENES = {
             "It opens one eye. It is not asleep. It is waiting."
         ),
         choices=(
-            Choice("Speak to the dragon", "dragon_parley"),
-            Choice("Try to slip past", "dragon_sneak"),
-            Choice("Turn back toward the wood road", "wood"),
+            Choice("Speak to the dragon", "dragon_parley", action_sound="roar"),
+            Choice("Try to slip past", "dragon_sneak", action_sound="steps"),
+            Choice("Turn back toward the wood road", "wood", action_sound="steps"),
         ),
     ),
     "dragon_parley": Scene(
         id="dragon_parley",
         title="Parley with the Dragon",
-        ambient="road",
+        ambient="mountain",
         image="road",
         text=(
             "The dragon watches you without moving. Its voice, when it comes, "
@@ -293,15 +293,15 @@ SCENES = {
             "you may pass.\""
         ),
         choices=(
-            Choice("Answer its riddle", "dragon_riddle"),
-            Choice("Speak plainly and ask to pass", "dragon_free"),
-            Choice("Attack", "dragon_attack"),
+            Choice("Answer its riddle", "dragon_riddle", action_sound="steps"),
+            Choice("Speak plainly and ask to pass", "dragon_free", action_sound="steps"),
+            Choice("Attack", "dragon_attack", action_sound="sword"),
         ),
     ),
     "dragon_riddle": Scene(
         id="dragon_riddle",
         title="The Dragon's Riddle",
-        ambient="road",
+        ambient="mountain",
         image="road",
         text=(
             "The dragon lifts its head and asks:\n\n"
@@ -309,39 +309,39 @@ SCENES = {
             "Its eye gleams. It is testing you."
         ),
         choices=(
-            Choice("A secret", "dragon_free"),
-            Choice("A stone", "dragon_wrong"),
+            Choice("A secret", "dragon_free", action_sound="magic"),
+            Choice("A stone", "dragon_wrong", action_sound="roar"),
         ),
     ),
     "dragon_wrong": Scene(
         id="dragon_wrong",
         title="The Dragon's Flame",
-        ambient="none",
+        ambient="mountain",
         image="death",
         text=(
             "You guess, and the dragon only sighs. \"Wrong,\" it says, and "
             "opens its mouth.\n\n"
             "Fire fills the world. There is no time to run."
         ),
-        choices=(Choice("Try again", "farm"),),
+        choices=(Choice("Try again", "farm", action_sound="steps"),),
         kind="death",
     ),
     "dragon_attack": Scene(
         id="dragon_attack",
         title="The Dragon's Flame",
-        ambient="none",
+        ambient="mountain",
         image="death",
         text=(
             "You charge the dragon with your little knife. It is almost kind "
             "about it. The fire comes all at once, and then there is nothing."
         ),
-        choices=(Choice("Try again", "farm"),),
+        choices=(Choice("Try again", "farm", action_sound="steps"),),
         kind="death",
     ),
     "dragon_sneak": Scene(
         id="dragon_sneak",
         title="Sneaking Past",
-        ambient="road",
+        ambient="mountain",
         image="road",
         text=(
             "You press yourself into the shadows and try to slip past. The "
@@ -349,27 +349,27 @@ SCENES = {
             "time."
         ),
         choices=(
-            Choice("Hold still and meet its eye", "dragon_parley"),
-            Choice("Make a run for it", "dragon_caught"),
+            Choice("Hold still and meet its eye", "dragon_parley", action_sound="steps"),
+            Choice("Make a run for it", "dragon_caught", action_sound="run"),
         ),
     ),
     "dragon_caught": Scene(
         id="dragon_caught",
         title="The Dragon's Flame",
-        ambient="none",
+        ambient="mountain",
         image="death",
         text=(
             "The dragon's tail snaps out and pins you to the stone. It leans "
             "down, and the last thing you see is the fire kindling in its "
             "throat."
         ),
-        choices=(Choice("Try again", "farm"),),
+        choices=(Choice("Try again", "farm", action_sound="steps"),),
         kind="death",
     ),
     "dragon_free": Scene(
         id="dragon_free",
         title="Past the Dragon",
-        ambient="road",
+        ambient="mountain",
         image="road",
         text=(
             "The dragon considers you for a long moment, then shifts aside "
@@ -380,8 +380,8 @@ SCENES = {
             "you."
         ),
         choices=(
-            Choice("Go on toward the castle", "gate"),
-            Choice("Rest a moment on the ledge", "gate"),
+            Choice("Go on toward the castle", "gate", action_sound="steps"),
+            Choice("Rest a moment on the ledge", "gate", action_sound="steps"),
         ),
     ),
 
@@ -389,7 +389,7 @@ SCENES = {
     "wood": Scene(
         id="wood",
         title="The Dark Wood",
-        ambient="road",
+        ambient="wood",
         image="road",
         text=(
             "The wood is dark and close. The trees crowd together, and no "
@@ -397,14 +397,14 @@ SCENES = {
             "drifting, bobbing between the trunks, off the path."
         ),
         choices=(
-            Choice("Keep to the path", "wood_river"),
-            Choice("Follow the dancing lights", "wood_light"),
+            Choice("Keep to the path", "wood_river", action_sound="steps"),
+            Choice("Follow the dancing lights", "wood_light", action_sound="magic"),
         ),
     ),
     "wood_light": Scene(
         id="wood_light",
         title="The Wisps",
-        ambient="road",
+        ambient="wood",
         image="road",
         text=(
             "The lights are will-o'-the-wisps, pale and lovely, dancing over "
@@ -412,27 +412,27 @@ SCENES = {
             "reach. The ground underfoot grows soft and wet."
         ),
         choices=(
-            Choice("Follow the lights deeper", "wood_swamp"),
-            Choice("Turn back to the path", "wood_river"),
+            Choice("Follow the lights deeper", "wood_swamp", action_sound="magic"),
+            Choice("Turn back to the path", "wood_river", action_sound="steps"),
         ),
     ),
     "wood_swamp": Scene(
         id="wood_swamp",
         title="The Bog",
-        ambient="none",
+        ambient="wood",
         image="death",
         text=(
             "You follow the lights too far. The marsh closes over your boots, "
             "then your knees, then your chest. The lights go on dancing. They "
             "do not help you."
         ),
-        choices=(Choice("Try again", "farm"),),
+        choices=(Choice("Try again", "farm", action_sound="steps"),),
         kind="death",
     ),
     "wood_river": Scene(
         id="wood_river",
         title="The River",
-        ambient="road",
+        ambient="wood",
         image="road",
         text=(
             "You come to a river, black and fast and loud. A fallen tree "
@@ -440,27 +440,27 @@ SCENES = {
             "the rocks."
         ),
         choices=(
-            Choice("Cross the fallen log", "wood_cross"),
-            Choice("Wade across", "river_wade"),
+            Choice("Cross the fallen log", "wood_cross", action_sound="creak"),
+            Choice("Wade across", "river_wade", action_sound="splash"),
         ),
     ),
     "river_wade": Scene(
         id="river_wade",
         title="The Current",
-        ambient="none",
+        ambient="wood",
         image="death",
         text=(
             "The river is deeper than it looks. The current takes your feet "
             "from under you, and the cold water closes over your head. The "
             "river keeps the rest."
         ),
-        choices=(Choice("Try again", "farm"),),
+        choices=(Choice("Try again", "farm", action_sound="steps"),),
         kind="death",
     ),
     "wood_cross": Scene(
         id="wood_cross",
         title="The Far Bank",
-        ambient="road",
+        ambient="wood",
         image="road",
         text=(
             "You cross the fallen tree, one careful step at a time, and drop "
@@ -468,14 +468,14 @@ SCENES = {
             "thin out."
         ),
         choices=(
-            Choice("Press on into the trees", "wood_wolf"),
-            Choice("Stop to wring out your boots", "wood_wolf"),
+            Choice("Press on into the trees", "wood_wolf", action_sound="steps"),
+            Choice("Stop to wring out your boots", "wood_wolf", action_sound="steps"),
         ),
     ),
     "wood_wolf": Scene(
         id="wood_wolf",
         title="The Wolves",
-        ambient="road",
+        ambient="wood",
         image="road",
         text=(
             "Wolves step out of the dark. They ring you in a slow circle, "
@@ -484,28 +484,28 @@ SCENES = {
             "If you run, they will have you."
         ),
         choices=(
-            Choice("Stand tall and shout", "wood_edge"),
-            Choice("Throw them your bread", "wood_edge"),
-            Choice("Run", "wolf_attack"),
+            Choice("Stand tall and shout", "wood_edge", action_sound="wolf"),
+            Choice("Throw them your bread", "wood_edge", action_sound="steps"),
+            Choice("Run", "wolf_attack", action_sound="run"),
         ),
     ),
     "wolf_attack": Scene(
         id="wolf_attack",
         title="The Wolves",
-        ambient="none",
+        ambient="wood",
         image="death",
         text=(
             "You run, and that is the worst thing you could do. The pack is "
             "on you before you take three steps. The dark wood swallows the "
             "rest."
         ),
-        choices=(Choice("Try again", "farm"),),
+        choices=(Choice("Try again", "farm", action_sound="steps"),),
         kind="death",
     ),
     "wood_edge": Scene(
         id="wood_edge",
         title="Out of the Wood",
-        ambient="road",
+        ambient="wood",
         image="road",
         text=(
             "You do not run. You hold your ground and stare them down, and "
@@ -514,8 +514,8 @@ SCENES = {
             "The castle wall rises ahead, black against the sky."
         ),
         choices=(
-            Choice("Go on toward the castle", "gate"),
-            Choice("Circle the wall", "gate"),
+            Choice("Go on toward the castle", "gate", action_sound="steps"),
+            Choice("Circle the wall", "gate", action_sound="steps"),
         ),
     ),
 
@@ -523,7 +523,7 @@ SCENES = {
     "gate": Scene(
         id="gate",
         title="The Castle Gate",
-        ambient="road",
+        ambient="castle",
         image="castle",
         text=(
             "You come to the castle gate. Torches burn in iron brackets. "
@@ -531,14 +531,14 @@ SCENES = {
             "all."
         ),
         choices=(
-            Choice("Walk up to the guards", "gate_guards"),
-            Choice("Look for another way in", "gate_wall"),
+            Choice("Walk up to the guards", "gate_guards", action_sound="steps"),
+            Choice("Look for another way in", "gate_wall", action_sound="steps"),
         ),
     ),
     "gate_guards": Scene(
         id="gate_guards",
         title="The Guards",
-        ambient="road",
+        ambient="castle",
         image="castle",
         text=(
             "The guards are broad men in dark steel, and they do not smile. "
@@ -546,15 +546,15 @@ SCENES = {
             "\"State your business,\" he says. \"Quickly.\""
         ),
         choices=(
-            Choice("Ask to see the king", "gate_talk"),
-            Choice("Rush them", "gate_fight"),
-            Choice("Back away", "gate"),
+            Choice("Ask to see the king", "gate_talk", action_sound="steps"),
+            Choice("Rush them", "gate_fight", action_sound="sword"),
+            Choice("Back away", "gate", action_sound="steps"),
         ),
     ),
     "gate_talk": Scene(
         id="gate_talk",
         title="The Guard Captain",
-        ambient="road",
+        ambient="castle",
         image="castle",
         text=(
             "The captain listens as you speak. When you tell him about your "
@@ -564,26 +564,26 @@ SCENES = {
             "here.\""
         ),
         choices=(
-            Choice("Tell him the truth", "dungeon"),
-            Choice("Try to talk your way past", "gate_fight"),
+            Choice("Tell him the truth", "dungeon", action_sound="chains"),
+            Choice("Try to talk your way past", "gate_fight", action_sound="sword"),
         ),
     ),
     "gate_fight": Scene(
         id="gate_fight",
         title="The Guards' Swords",
-        ambient="none",
+        ambient="castle",
         image="death",
         text=(
             "You rush the guards. There are too many, and they are too quick. "
             "The gate does not fall. You do."
         ),
-        choices=(Choice("Try again", "farm"),),
+        choices=(Choice("Try again", "farm", action_sound="steps"),),
         kind="death",
     ),
     "gate_wall": Scene(
         id="gate_wall",
         title="The Wall",
-        ambient="road",
+        ambient="castle",
         image="castle",
         text=(
             "You slip away from the gate and follow the wall until the "
@@ -591,14 +591,14 @@ SCENES = {
             "drain low in the wall where the moat water runs out."
         ),
         choices=(
-            Choice("Climb the wall", "wall_climb"),
-            Choice("Find a drain", "wall_drain"),
+            Choice("Climb the wall", "wall_climb", action_sound="steps"),
+            Choice("Find a drain", "wall_drain", action_sound="splash"),
         ),
     ),
     "wall_climb": Scene(
         id="wall_climb",
         title="Scaling the Wall",
-        ambient="road",
+        ambient="castle",
         image="castle",
         text=(
             "You dig your fingers into the cracks and climb. Halfway up, a "
@@ -606,26 +606,26 @@ SCENES = {
             "below."
         ),
         choices=(
-            Choice("Keep climbing", "courtyard"),
+            Choice("Keep climbing", "courtyard", action_sound="steps"),
             Choice("Slip", "wall_fall", action_sound="scream"),
         ),
     ),
     "wall_fall": Scene(
         id="wall_fall",
         title="The Wall",
-        ambient="none",
+        ambient="castle",
         image="death",
         text=(
             "Your grip fails. You fall, and the wall rushes past, and the "
             "stones at the bottom are waiting."
         ),
-        choices=(Choice("Try again", "farm"),),
+        choices=(Choice("Try again", "farm", action_sound="steps"),),
         kind="death",
     ),
     "wall_drain": Scene(
         id="wall_drain",
         title="The Drain",
-        ambient="road",
+        ambient="castle",
         image="castle",
         text=(
             "You crawl through the drain, cold water up to your chest, and "
@@ -633,14 +633,14 @@ SCENES = {
             "bread and smoke."
         ),
         choices=(
-            Choice("Crawl through", "kitchen"),
-            Choice("Turn back", "gate"),
+            Choice("Crawl through", "kitchen", action_sound="splash"),
+            Choice("Turn back", "gate", action_sound="steps"),
         ),
     ),
     "courtyard": Scene(
         id="courtyard",
         title="The Courtyard",
-        ambient="road",
+        ambient="castle",
         image="castle",
         text=(
             "The courtyard is wide and open, swept by torchlight. Guards pace "
@@ -648,34 +648,34 @@ SCENES = {
             "by the smell of it."
         ),
         choices=(
-            Choice("Cross openly", "courtyard_open"),
-            Choice("Slip along the shadow", "kitchen"),
+            Choice("Cross openly", "courtyard_open", action_sound="steps"),
+            Choice("Slip along the shadow", "kitchen", action_sound="steps"),
         ),
     ),
     "courtyard_open": Scene(
         id="courtyard_open",
         title="Seen in the Yard",
-        ambient="road",
+        ambient="castle",
         image="castle",
         text=(
             "You step out into the open, and a shout goes up. The guards have "
             "seen you. Boots pound on stone from every side."
         ),
         choices=(
-            Choice("Surrender", "dungeon"),
-            Choice("Run", "courtyard_death"),
+            Choice("Surrender", "dungeon", action_sound="chains"),
+            Choice("Run", "courtyard_death", action_sound="run"),
         ),
     ),
     "courtyard_death": Scene(
         id="courtyard_death",
         title="The Chase",
-        ambient="none",
+        ambient="castle",
         image="death",
         text=(
             "You run, but the courtyard has no doors that open for you. The "
             "guards close in, and their swords end the chase."
         ),
-        choices=(Choice("Try again", "farm"),),
+        choices=(Choice("Try again", "farm", action_sound="steps"),),
         kind="death",
     ),
 
@@ -683,7 +683,7 @@ SCENES = {
     "dungeon": Scene(
         id="dungeon",
         title="The Dungeon",
-        ambient="road",
+        ambient="castle",
         image="castle",
         text=(
             "They throw you into a cell and the iron door clangs shut. It is "
@@ -693,15 +693,15 @@ SCENES = {
             "not they.\""
         ),
         choices=(
-            Choice("Talk to the prisoner", "dungeon_wizard"),
-            Choice("Work at the lock", "passage"),
-            Choice("Give up hope", "dungeon_despair"),
+            Choice("Talk to the prisoner", "dungeon_wizard", action_sound="steps"),
+            Choice("Work at the lock", "passage", action_sound="chains"),
+            Choice("Give up hope", "dungeon_despair", action_sound="steps"),
         ),
     ),
     "dungeon_wizard": Scene(
         id="dungeon_wizard",
         title="The Prisoner",
-        ambient="road",
+        ambient="castle",
         image="castle",
         text=(
             "In the next cell sits an old wizard, his gray "
@@ -713,20 +713,20 @@ SCENES = {
             "He only borrows it.\""
         ),
         choices=(
-            Choice("Take his charm", "passage"),
-            Choice("Refuse and pick the lock yourself", "passage"),
+            Choice("Take his charm", "passage", action_sound="magic"),
+            Choice("Refuse and pick the lock yourself", "passage", action_sound="chains"),
         ),
     ),
     "dungeon_despair": Scene(
         id="dungeon_despair",
         title="The Long Dark",
-        ambient="none",
+        ambient="castle",
         image="death",
         text=(
             "The days run together. You stop counting them. The dark takes "
             "the fight out of you, and one morning you simply do not wake."
         ),
-        choices=(Choice("Try again", "farm"),),
+        choices=(Choice("Try again", "farm", action_sound="steps"),),
         kind="death",
     ),
 
@@ -734,7 +734,7 @@ SCENES = {
     "kitchen": Scene(
         id="kitchen",
         title="The Kitchen",
-        ambient="farm",
+        ambient="castle",
         image="castle",
         text=(
             "The kitchen is a blaze of fire and clatter, and no one looks "
@@ -742,14 +742,14 @@ SCENES = {
             "of bread. The servants' stair lies just beyond the larder door."
         ),
         choices=(
-            Choice("Hide in the larder", "great_hall"),
-            Choice("Follow the servants' stair", "passage"),
+            Choice("Hide in the larder", "great_hall", action_sound="fire"),
+            Choice("Follow the servants' stair", "passage", action_sound="creak"),
         ),
     ),
     "passage": Scene(
         id="passage",
         title="The Servants' Passage",
-        ambient="road",
+        ambient="castle",
         image="castle",
         text=(
             "The servants' passage is narrow and dark, running behind the "
@@ -757,8 +757,8 @@ SCENES = {
             "crowd, and far above, the wind singing around the Spire."
         ),
         choices=(
-            Choice("Climb toward the Spire", "spire_stairs"),
-            Choice("Slip behind the throne", "great_hall"),
+            Choice("Climb toward the Spire", "spire_stairs", action_sound="creak"),
+            Choice("Slip behind the throne", "great_hall", action_sound="steps"),
         ),
     ),
 
@@ -766,7 +766,7 @@ SCENES = {
     "great_hall": Scene(
         id="great_hall",
         title="The Great Hall",
-        ambient="road",
+        ambient="castle",
         image="castle",
         text=(
             "The great hall is vast and cold, full of courtiers in black. At "
@@ -774,14 +774,14 @@ SCENES = {
             "narrow stair winds up into the Spire."
         ),
         choices=(
-            Choice("Slip toward the Spire stair", "spire_stairs"),
-            Choice("Step out before the king", "throne_approach"),
+            Choice("Slip toward the Spire stair", "spire_stairs", action_sound="steps"),
+            Choice("Step out before the king", "throne_approach", action_sound="steps"),
         ),
     ),
     "throne_approach": Scene(
         id="throne_approach",
         title="Toward the Throne",
-        ambient="road",
+        ambient="castle",
         image="castle",
         text=(
             "You step out from the shadows, and the court parts around you "
@@ -789,14 +789,14 @@ SCENES = {
             "coat, and every guard in the hall is watching."
         ),
         choices=(
-            Choice("Speak your demand", "throne_seen"),
-            Choice("Slip away to the stair", "spire_stairs"),
+            Choice("Speak your demand", "throne_seen", action_sound="steps"),
+            Choice("Slip away to the stair", "spire_stairs", action_sound="steps"),
         ),
     ),
     "throne_seen": Scene(
         id="throne_seen",
         title="Before the Throne",
-        ambient="road",
+        ambient="castle",
         image="castle",
         text=(
             "The king looks down at you from his iron throne. He is not "
@@ -805,14 +805,14 @@ SCENES = {
             "very foolish.\""
         ),
         choices=(
-            Choice("Demand your wife back", "throne_demand"),
-            Choice("Turn and run", "courtyard_death"),
+            Choice("Demand your wife back", "throne_demand", action_sound="steps"),
+            Choice("Turn and run", "courtyard_death", action_sound="run"),
         ),
     ),
     "throne_demand": Scene(
         id="throne_demand",
         title="The Demand",
-        ambient="road",
+        ambient="castle",
         image="castle",
         text=(
             "You step forward and demand your wife. The hall goes very still. "
@@ -820,8 +820,8 @@ SCENES = {
             "toward you, swords sliding from their sheaths."
         ),
         choices=(
-            Choice("Fight the guards", "gate_fight"),
-            Choice("Let them seize you", "dungeon"),
+            Choice("Fight the guards", "gate_fight", action_sound="sword"),
+            Choice("Let them seize you", "dungeon", action_sound="chains"),
         ),
     ),
 
@@ -829,7 +829,7 @@ SCENES = {
     "spire_stairs": Scene(
         id="spire_stairs",
         title="The Spire Stairs",
-        ambient="road",
+        ambient="spire",
         image="castle",
         text=(
             "The stair winds up and up, each step worn smooth by years of "
@@ -837,14 +837,14 @@ SCENES = {
             "falls away to a pit of shadow."
         ),
         choices=(
-            Choice("Climb to the top", "spire"),
-            Choice("Pause and look out an arrow-slit", "spire"),
+            Choice("Climb to the top", "spire", action_sound="creak"),
+            Choice("Pause and look out an arrow-slit", "spire", action_sound="gasp"),
         ),
     ),
     "spire": Scene(
         id="spire",
         title="The Black Spire",
-        ambient="road",
+        ambient="spire",
         image="castle",
         text=(
             "The room at the top of the Spire is round and high, lit by a "
@@ -854,15 +854,15 @@ SCENES = {
             "And there, behind a shimmering veil, stands your wife."
         ),
         choices=(
-            Choice("Go to your wife", "wife_found"),
-            Choice("Touch the humming device", "spire_trap"),
-            Choice("Listen to the shadows", "queen_ghost"),
+            Choice("Go to your wife", "wife_found", action_sound="steps"),
+            Choice("Touch the humming device", "spire_trap", action_sound="magic"),
+            Choice("Listen to the shadows", "queen_ghost", action_sound="whisper"),
         ),
     ),
     "queen_ghost": Scene(
         id="queen_ghost",
         title="The Queen's Ghost",
-        ambient="road",
+        ambient="spire",
         image="castle",
         text=(
             "A cold breath touches your cheek. In the shadows at the edge of "
@@ -874,21 +874,21 @@ SCENES = {
             "power dies with it.\""
         ),
         choices=(
-            Choice("Take her secret and go to your wife", "wife_found"),
-            Choice("Ask her how she died", "wife_found"),
+            Choice("Take her secret and go to your wife", "wife_found", action_sound="whisper"),
+            Choice("Ask her how she died", "wife_found", action_sound="whisper"),
         ),
     ),
     "spire_trap": Scene(
         id="spire_trap",
         title="The Spell",
-        ambient="none",
+        ambient="spire",
         image="death",
         text=(
             "You reach for the humming device, and the spell inside it wakes "
             "like a snake. It coils around your heart and squeezes. The last "
             "thing you hear is your wife calling your name."
         ),
-        choices=(Choice("Try again", "farm"),),
+        choices=(Choice("Try again", "farm", action_sound="steps"),),
         kind="death",
     ),
 
@@ -896,7 +896,7 @@ SCENES = {
     "wife_found": Scene(
         id="wife_found",
         title="Your Wife",
-        ambient="road",
+        ambient="spire",
         image="castle",
         text=(
             "The veil parts, and there she is, Lena, your wife, pale and thin "
@@ -908,14 +908,14 @@ SCENES = {
             "Below, boots ring on the stair. The king is coming."
         ),
         choices=(
-            Choice("Step out to face the king", "king_face"),
-            Choice("Grab her hand and run", "escape_run"),
+            Choice("Step out to face the king", "king_face", action_sound="steps"),
+            Choice("Grab her hand and run", "escape_run", action_sound="run"),
         ),
     ),
     "king_face": Scene(
         id="king_face",
         title="The King",
-        ambient="road",
+        ambient="spire",
         image="castle",
         text=(
             "The king stands in the doorway, and the dragon-fire at the heart "
@@ -925,16 +925,16 @@ SCENES = {
             "can take her from me?\""
         ),
         choices=(
-            Choice("Lunge at the king", "king_fight"),
-            Choice("Strike at the dragon-fire's heart", "spell_break"),
-            Choice("Cry out to the dragon to be free", "dragon_ally"),
-            Choice("Grab her and run", "escape_run"),
+            Choice("Lunge at the king", "king_fight", action_sound="sword"),
+            Choice("Strike at the dragon-fire's heart", "spell_break", action_sound="fire"),
+            Choice("Cry out to the dragon to be free", "dragon_ally", action_sound="roar"),
+            Choice("Grab her and run", "escape_run", action_sound="run"),
         ),
     ),
     "king_fight": Scene(
         id="king_fight",
         title="The Fight",
-        ambient="road",
+        ambient="spire",
         image="castle",
         text=(
             "You lunge at the king. He is old and cruel, but the fire leaps "
@@ -942,14 +942,14 @@ SCENES = {
             "stones lies a fallen torch, still burning."
         ),
         choices=(
-            Choice("Seize the fallen torch and strike", "good_punish"),
-            Choice("Tackle him into the flames", "both_slain"),
+            Choice("Seize the fallen torch and strike", "good_punish", action_sound="sword"),
+            Choice("Tackle him into the flames", "both_slain", action_sound="fire"),
         ),
     ),
     "spell_break": Scene(
         id="spell_break",
         title="The Unmaking",
-        ambient="road",
+        ambient="spire",
         image="castle",
         text=(
             "You throw yourself at the heart of the device, the dragon-fire "
@@ -957,14 +957,14 @@ SCENES = {
             "or free it. You reach into the blaze."
         ),
         choices=(
-            Choice("Quench the fire for good", "good_break_spell"),
-            Choice("Turn to check on your wife", "wife_slain"),
+            Choice("Quench the fire for good", "good_break_spell", action_sound="magic"),
+            Choice("Turn to check on your wife", "wife_slain", action_sound="sword"),
         ),
     ),
     "escape_run": Scene(
         id="escape_run",
         title="The Long Stair",
-        ambient="road",
+        ambient="spire",
         image="castle",
         text=(
             "You grab Lena's hand and run for the stair. The king's shout "
@@ -972,14 +972,14 @@ SCENES = {
             "down the winding steps."
         ),
         choices=(
-            Choice("Run hand in hand, do not look back", "good_escape"),
-            Choice("Stop to bar the door behind you", "farmer_slain"),
+            Choice("Run hand in hand, do not look back", "good_escape", action_sound="run"),
+            Choice("Stop to bar the door behind you", "farmer_slain", action_sound="door"),
         ),
     ),
     "dragon_ally": Scene(
         id="dragon_ally",
         title="The Dragon's Chains",
-        ambient="road",
+        ambient="spire",
         image="castle",
         text=(
             "You call out to the fire, not to the king, but to what burns "
@@ -988,8 +988,8 @@ SCENES = {
             "vast and ancient lifts its head."
         ),
         choices=(
-            Choice("Let the dragon take its freedom", "good_dragon"),
-            Choice("Step between the dragon and the king", "both_slain"),
+            Choice("Let the dragon take its freedom", "good_dragon", action_sound="roar"),
+            Choice("Step between the dragon and the king", "both_slain", action_sound="roar"),
         ),
     ),
 
@@ -997,7 +997,7 @@ SCENES = {
     "good_punish": Scene(
         id="good_punish",
         title="The King Falls",
-        ambient="road",
+        ambient="spire",
         image="castle",
         text=(
             "You seize the fallen torch and drive the king back. He has ruled "
@@ -1007,13 +1007,13 @@ SCENES = {
             "take Lena's hand, and together you walk out of the Spire, past "
             "the silent guards, into the dawn."
         ),
-        choices=(Choice("Play again", "farm"),),
+        choices=(Choice("Play again", "farm", action_sound="steps"),),
         kind="good",
     ),
     "good_break_spell": Scene(
         id="good_break_spell",
         title="The Unmade Spell",
-        ambient="road",
+        ambient="spire",
         image="castle",
         text=(
             "You quench the dragon-fire, and the spell-engine dies with a "
@@ -1025,7 +1025,7 @@ SCENES = {
             "dragon flies away. And you and Lena go home to a kingdom that "
             "will never fear a king's greed again."
         ),
-        choices=(Choice("Play again", "farm"),),
+        choices=(Choice("Play again", "farm", action_sound="steps"),),
         kind="good",
     ),
     "good_escape": Scene(
@@ -1040,13 +1040,13 @@ SCENES = {
             "The king can keep his Spire. You have what matters, and you are "
             "never letting go again."
         ),
-        choices=(Choice("Play again", "farm"),),
+        choices=(Choice("Play again", "farm", action_sound="steps"),),
         kind="good",
     ),
     "good_dragon": Scene(
         id="good_dragon",
         title="The Dragon Freed",
-        ambient="road",
+        ambient="mountain",
         image="road",
         text=(
             "The dragon rises from beneath the Spire and shakes off its "
@@ -1056,7 +1056,7 @@ SCENES = {
             "circling once in the morning sky before it flies away. You and "
             "Lena watch it go, hand in hand, and then you walk home."
         ),
-        choices=(Choice("Play again", "farm"),),
+        choices=(Choice("Play again", "farm", action_sound="steps"),),
         kind="good",
     ),
 
@@ -1064,7 +1064,7 @@ SCENES = {
     "wife_slain": Scene(
         id="wife_slain",
         title="She Is Gone",
-        ambient="none",
+        ambient="spire",
         image="death",
         text=(
             "In the moment you turn away, the king strikes. Lena falls, and "
@@ -1072,26 +1072,26 @@ SCENES = {
             "You hold her as the room burns down around you. You do not get "
             "up again."
         ),
-        choices=(Choice("Try again", "farm"),),
+        choices=(Choice("Try again", "farm", action_sound="steps"),),
         kind="death",
     ),
     "both_slain": Scene(
         id="both_slain",
         title="Together",
-        ambient="none",
+        ambient="spire",
         image="death",
         text=(
             "You and the king fall together into the fire, and the fire takes "
             "you both. The last thing you know is Lena's hand reaching for "
             "yours, and then nothing."
         ),
-        choices=(Choice("Try again", "farm"),),
+        choices=(Choice("Try again", "farm", action_sound="steps"),),
         kind="death",
     ),
     "farmer_slain": Scene(
         id="farmer_slain",
         title="The Door",
-        ambient="none",
+        ambient="spire",
         image="death",
         text=(
             "You shove the door closed behind Lena and lean your weight "
@@ -1099,7 +1099,7 @@ SCENES = {
             "the smoke, and you hold it as long as you can.\n\n"
             "She is safe. That is enough. It has to be."
         ),
-        choices=(Choice("Try again", "farm"),),
+        choices=(Choice("Try again", "farm", action_sound="steps"),),
         kind="death",
     ),
 }

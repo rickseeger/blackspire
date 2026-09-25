@@ -1,0 +1,279 @@
+Black Spire - scene/choice-to-audio map
+============================================================
+start scene : farm
+death bell  : bell -> death_bell.wav
+
+AMBIENT BEDS (always-on, looped per scene)
+------------------------------------------------------------
+  castle    castle_ambient.wav   20 scene(s): gate, gate_guards, gate_talk, gate_fight, gate_wall, wall_climb, wall_fall, wall_drain, courtyard, courtyard_open, courtyard_death, dungeon, dungeon_wizard, dungeon_despair, kitchen, passage, great_hall, throne_approach, throne_seen, throne_demand
+  farm      farm_ambient.wav     6 scene(s): farm, animals, farewell, return, gather, good_escape
+  mountain  mountain_ambient.wav 15 scene(s): mountain, mountain_ledge, mountain_scree, mountain_fall, mountain_ridge, wizard_hut, dragon_pass, dragon_parley, dragon_riddle, dragon_wrong, dragon_attack, dragon_sneak, dragon_caught, dragon_free, good_dragon
+  road      road_ambient.wav     1 scene(s): road
+  spire     spire_ambient.wav    15 scene(s): spire_stairs, spire, queen_ghost, spire_trap, wife_found, king_face, king_fight, spell_break, escape_run, dragon_ally, good_punish, good_break_spell, wife_slain, both_slain, farmer_slain
+  village   village_ambient.wav  2 scene(s): errand, herald
+  wood      wood_ambient.wav     9 scene(s): wood, wood_light, wood_swamp, wood_river, river_wade, wood_cross, wood_wolf, wolf_attack, wood_edge
+
+SCENES AND THEIR CHOICES
+------------------------------------------------------------
+[farm] The Farm
+    ambient: farm (farm_ambient.wav)
+      1. Run the errand to the village                -> errand             sound=steps     (action_steps.wav)
+      2. Feed the animals first                       -> animals            sound=steps     (action_steps.wav)
+[animals] The Animals
+    ambient: farm (farm_ambient.wav)
+      1. Set off for the village                      -> errand             sound=steps     (action_steps.wav)
+      2. Go inside to kiss your wife goodbye          -> farewell           sound=door      (action_door.wav)
+[farewell] Farewell
+    ambient: farm (farm_ambient.wav)
+      1. Set off for the village                      -> errand             sound=steps     (action_steps.wav)
+      2. Walk her to the gate and kiss her one more time -> errand             sound=steps     (action_steps.wav)
+[errand] The Errand
+    ambient: village (village_ambient.wav)
+      1. Run home at once                             -> return             sound=run       (action_run.wav)
+      2. Ask the old woman what happened              -> herald             sound=steps     (action_steps.wav)
+[herald] The Old Woman
+    ambient: village (village_ambient.wav)
+      1. Run home                                     -> return             sound=run       (action_run.wav)
+      2. Stop to thank her                            -> return             sound=steps     (action_steps.wav)
+[return] Home
+    ambient: farm (farm_ambient.wav)
+      1. Set out for the castle                       -> road               sound=gallop    (action_gallop.wav)
+      2. Gather a few things first                    -> gather             sound=steps     (action_steps.wav)
+[gather] What You Carry
+    ambient: farm (farm_ambient.wav)
+      1. Set out for the castle                       -> road               sound=gallop    (action_gallop.wav)
+      2. Take one last look at home                   -> road               sound=steps     (action_steps.wav)
+[road] The Fork in the Road
+    ambient: road (road_ambient.wav)
+      1. Take the high mountain path                  -> mountain           sound=steps     (action_steps.wav)
+      2. Take the low road through the wood           -> wood               sound=steps     (action_steps.wav)
+[mountain] The Mountain Path
+    ambient: mountain (mountain_ambient.wav)
+      1. Keep to the narrow ledge                     -> mountain_ledge     sound=steps     (action_steps.wav)
+      2. Scramble up the loose rock                   -> mountain_scree     sound=stone     (action_stone.wav)
+[mountain_ledge] The Narrow Ledge
+    ambient: mountain (mountain_ambient.wav)
+      1. Edge along carefully                         -> mountain_ridge     sound=steps     (action_steps.wav)
+      2. Lean out for a look                          -> mountain_fall      sound=scream    (action_scream.wav)
+[mountain_scree] Loose Rock
+    ambient: mountain (mountain_ambient.wav)
+      1. Dig in your heels                            -> mountain_ridge     sound=stone     (action_stone.wav)
+      2. Leap for the far handhold                    -> mountain_fall      sound=scream    (action_scream.wav)
+[mountain_fall] [DEATH] The Fall
+    ambient: mountain (mountain_ambient.wav)
+      1. Try again                                    -> farm               sound=steps     (action_steps.wav)
+[mountain_ridge] The Ridge
+    ambient: mountain (mountain_ambient.wav)
+      1. Go to the wizard's hut                       -> wizard_hut         sound=steps     (action_steps.wav)
+      2. Press on toward the pass                     -> dragon_pass        sound=steps     (action_steps.wav)
+[wizard_hut] The Wizard's Hut
+    ambient: mountain (mountain_ambient.wav)
+      1. Accept his warning and advice                -> dragon_pass        sound=magic     (action_magic.wav)
+      2. Decline and go on alone                      -> dragon_pass        sound=steps     (action_steps.wav)
+[dragon_pass] The Dragon's Pass
+    ambient: mountain (mountain_ambient.wav)
+      1. Speak to the dragon                          -> dragon_parley      sound=roar      (action_roar.wav)
+      2. Try to slip past                             -> dragon_sneak       sound=steps     (action_steps.wav)
+      3. Turn back toward the wood road               -> wood               sound=steps     (action_steps.wav)
+[dragon_parley] Parley with the Dragon
+    ambient: mountain (mountain_ambient.wav)
+      1. Answer its riddle                            -> dragon_riddle      sound=steps     (action_steps.wav)
+      2. Speak plainly and ask to pass                -> dragon_free        sound=steps     (action_steps.wav)
+      3. Attack                                       -> dragon_attack      sound=sword     (action_sword.wav)
+[dragon_riddle] The Dragon's Riddle
+    ambient: mountain (mountain_ambient.wav)
+      1. A secret                                     -> dragon_free        sound=magic     (action_magic.wav)
+      2. A stone                                      -> dragon_wrong       sound=roar      (action_roar.wav)
+[dragon_wrong] [DEATH] The Dragon's Flame
+    ambient: mountain (mountain_ambient.wav)
+      1. Try again                                    -> farm               sound=steps     (action_steps.wav)
+[dragon_attack] [DEATH] The Dragon's Flame
+    ambient: mountain (mountain_ambient.wav)
+      1. Try again                                    -> farm               sound=steps     (action_steps.wav)
+[dragon_sneak] Sneaking Past
+    ambient: mountain (mountain_ambient.wav)
+      1. Hold still and meet its eye                  -> dragon_parley      sound=steps     (action_steps.wav)
+      2. Make a run for it                            -> dragon_caught      sound=run       (action_run.wav)
+[dragon_caught] [DEATH] The Dragon's Flame
+    ambient: mountain (mountain_ambient.wav)
+      1. Try again                                    -> farm               sound=steps     (action_steps.wav)
+[dragon_free] Past the Dragon
+    ambient: mountain (mountain_ambient.wav)
+      1. Go on toward the castle                      -> gate               sound=steps     (action_steps.wav)
+      2. Rest a moment on the ledge                   -> gate               sound=steps     (action_steps.wav)
+[wood] The Dark Wood
+    ambient: wood (wood_ambient.wav)
+      1. Keep to the path                             -> wood_river         sound=steps     (action_steps.wav)
+      2. Follow the dancing lights                    -> wood_light         sound=magic     (action_magic.wav)
+[wood_light] The Wisps
+    ambient: wood (wood_ambient.wav)
+      1. Follow the lights deeper                     -> wood_swamp         sound=magic     (action_magic.wav)
+      2. Turn back to the path                        -> wood_river         sound=steps     (action_steps.wav)
+[wood_swamp] [DEATH] The Bog
+    ambient: wood (wood_ambient.wav)
+      1. Try again                                    -> farm               sound=steps     (action_steps.wav)
+[wood_river] The River
+    ambient: wood (wood_ambient.wav)
+      1. Cross the fallen log                         -> wood_cross         sound=creak     (action_creak.wav)
+      2. Wade across                                  -> river_wade         sound=splash    (action_splash.wav)
+[river_wade] [DEATH] The Current
+    ambient: wood (wood_ambient.wav)
+      1. Try again                                    -> farm               sound=steps     (action_steps.wav)
+[wood_cross] The Far Bank
+    ambient: wood (wood_ambient.wav)
+      1. Press on into the trees                      -> wood_wolf          sound=steps     (action_steps.wav)
+      2. Stop to wring out your boots                 -> wood_wolf          sound=steps     (action_steps.wav)
+[wood_wolf] The Wolves
+    ambient: wood (wood_ambient.wav)
+      1. Stand tall and shout                         -> wood_edge          sound=wolf      (action_wolf.wav)
+      2. Throw them your bread                        -> wood_edge          sound=steps     (action_steps.wav)
+      3. Run                                          -> wolf_attack        sound=run       (action_run.wav)
+[wolf_attack] [DEATH] The Wolves
+    ambient: wood (wood_ambient.wav)
+      1. Try again                                    -> farm               sound=steps     (action_steps.wav)
+[wood_edge] Out of the Wood
+    ambient: wood (wood_ambient.wav)
+      1. Go on toward the castle                      -> gate               sound=steps     (action_steps.wav)
+      2. Circle the wall                              -> gate               sound=steps     (action_steps.wav)
+[gate] The Castle Gate
+    ambient: castle (castle_ambient.wav)
+      1. Walk up to the guards                        -> gate_guards        sound=steps     (action_steps.wav)
+      2. Look for another way in                      -> gate_wall          sound=steps     (action_steps.wav)
+[gate_guards] The Guards
+    ambient: castle (castle_ambient.wav)
+      1. Ask to see the king                          -> gate_talk          sound=steps     (action_steps.wav)
+      2. Rush them                                    -> gate_fight         sound=sword     (action_sword.wav)
+      3. Back away                                    -> gate               sound=steps     (action_steps.wav)
+[gate_talk] The Guard Captain
+    ambient: castle (castle_ambient.wav)
+      1. Tell him the truth                           -> dungeon            sound=chains    (action_chains.wav)
+      2. Try to talk your way past                    -> gate_fight         sound=sword     (action_sword.wav)
+[gate_fight] [DEATH] The Guards' Swords
+    ambient: castle (castle_ambient.wav)
+      1. Try again                                    -> farm               sound=steps     (action_steps.wav)
+[gate_wall] The Wall
+    ambient: castle (castle_ambient.wav)
+      1. Climb the wall                               -> wall_climb         sound=steps     (action_steps.wav)
+      2. Find a drain                                 -> wall_drain         sound=splash    (action_splash.wav)
+[wall_climb] Scaling the Wall
+    ambient: castle (castle_ambient.wav)
+      1. Keep climbing                                -> courtyard          sound=steps     (action_steps.wav)
+      2. Slip                                         -> wall_fall          sound=scream    (action_scream.wav)
+[wall_fall] [DEATH] The Wall
+    ambient: castle (castle_ambient.wav)
+      1. Try again                                    -> farm               sound=steps     (action_steps.wav)
+[wall_drain] The Drain
+    ambient: castle (castle_ambient.wav)
+      1. Crawl through                                -> kitchen            sound=splash    (action_splash.wav)
+      2. Turn back                                    -> gate               sound=steps     (action_steps.wav)
+[courtyard] The Courtyard
+    ambient: castle (castle_ambient.wav)
+      1. Cross openly                                 -> courtyard_open     sound=steps     (action_steps.wav)
+      2. Slip along the shadow                        -> kitchen            sound=steps     (action_steps.wav)
+[courtyard_open] Seen in the Yard
+    ambient: castle (castle_ambient.wav)
+      1. Surrender                                    -> dungeon            sound=chains    (action_chains.wav)
+      2. Run                                          -> courtyard_death    sound=run       (action_run.wav)
+[courtyard_death] [DEATH] The Chase
+    ambient: castle (castle_ambient.wav)
+      1. Try again                                    -> farm               sound=steps     (action_steps.wav)
+[dungeon] The Dungeon
+    ambient: castle (castle_ambient.wav)
+      1. Talk to the prisoner                         -> dungeon_wizard     sound=steps     (action_steps.wav)
+      2. Work at the lock                             -> passage            sound=chains    (action_chains.wav)
+      3. Give up hope                                 -> dungeon_despair    sound=steps     (action_steps.wav)
+[dungeon_wizard] The Prisoner
+    ambient: castle (castle_ambient.wav)
+      1. Take his charm                               -> passage            sound=magic     (action_magic.wav)
+      2. Refuse and pick the lock yourself            -> passage            sound=chains    (action_chains.wav)
+[dungeon_despair] [DEATH] The Long Dark
+    ambient: castle (castle_ambient.wav)
+      1. Try again                                    -> farm               sound=steps     (action_steps.wav)
+[kitchen] The Kitchen
+    ambient: castle (castle_ambient.wav)
+      1. Hide in the larder                           -> great_hall         sound=fire      (action_fire.wav)
+      2. Follow the servants' stair                   -> passage            sound=creak     (action_creak.wav)
+[passage] The Servants' Passage
+    ambient: castle (castle_ambient.wav)
+      1. Climb toward the Spire                       -> spire_stairs       sound=creak     (action_creak.wav)
+      2. Slip behind the throne                       -> great_hall         sound=steps     (action_steps.wav)
+[great_hall] The Great Hall
+    ambient: castle (castle_ambient.wav)
+      1. Slip toward the Spire stair                  -> spire_stairs       sound=steps     (action_steps.wav)
+      2. Step out before the king                     -> throne_approach    sound=steps     (action_steps.wav)
+[throne_approach] Toward the Throne
+    ambient: castle (castle_ambient.wav)
+      1. Speak your demand                            -> throne_seen        sound=steps     (action_steps.wav)
+      2. Slip away to the stair                       -> spire_stairs       sound=steps     (action_steps.wav)
+[throne_seen] Before the Throne
+    ambient: castle (castle_ambient.wav)
+      1. Demand your wife back                        -> throne_demand      sound=steps     (action_steps.wav)
+      2. Turn and run                                 -> courtyard_death    sound=run       (action_run.wav)
+[throne_demand] The Demand
+    ambient: castle (castle_ambient.wav)
+      1. Fight the guards                             -> gate_fight         sound=sword     (action_sword.wav)
+      2. Let them seize you                           -> dungeon            sound=chains    (action_chains.wav)
+[spire_stairs] The Spire Stairs
+    ambient: spire (spire_ambient.wav)
+      1. Climb to the top                             -> spire              sound=creak     (action_creak.wav)
+      2. Pause and look out an arrow-slit             -> spire              sound=gasp      (action_gasp.wav)
+[spire] The Black Spire
+    ambient: spire (spire_ambient.wav)
+      1. Go to your wife                              -> wife_found         sound=steps     (action_steps.wav)
+      2. Touch the humming device                     -> spire_trap         sound=magic     (action_magic.wav)
+      3. Listen to the shadows                        -> queen_ghost        sound=whisper   (action_whisper.wav)
+[queen_ghost] The Queen's Ghost
+    ambient: spire (spire_ambient.wav)
+      1. Take her secret and go to your wife          -> wife_found         sound=whisper   (action_whisper.wav)
+      2. Ask her how she died                         -> wife_found         sound=whisper   (action_whisper.wav)
+[spire_trap] [DEATH] The Spell
+    ambient: spire (spire_ambient.wav)
+      1. Try again                                    -> farm               sound=steps     (action_steps.wav)
+[wife_found] Your Wife
+    ambient: spire (spire_ambient.wav)
+      1. Step out to face the king                    -> king_face          sound=steps     (action_steps.wav)
+      2. Grab her hand and run                        -> escape_run         sound=run       (action_run.wav)
+[king_face] The King
+    ambient: spire (spire_ambient.wav)
+      1. Lunge at the king                            -> king_fight         sound=sword     (action_sword.wav)
+      2. Strike at the dragon-fire's heart            -> spell_break        sound=fire      (action_fire.wav)
+      3. Cry out to the dragon to be free             -> dragon_ally        sound=roar      (action_roar.wav)
+      4. Grab her and run                             -> escape_run         sound=run       (action_run.wav)
+[king_fight] The Fight
+    ambient: spire (spire_ambient.wav)
+      1. Seize the fallen torch and strike            -> good_punish        sound=sword     (action_sword.wav)
+      2. Tackle him into the flames                   -> both_slain         sound=fire      (action_fire.wav)
+[spell_break] The Unmaking
+    ambient: spire (spire_ambient.wav)
+      1. Quench the fire for good                     -> good_break_spell   sound=magic     (action_magic.wav)
+      2. Turn to check on your wife                   -> wife_slain         sound=sword     (action_sword.wav)
+[escape_run] The Long Stair
+    ambient: spire (spire_ambient.wav)
+      1. Run hand in hand, do not look back           -> good_escape        sound=run       (action_run.wav)
+      2. Stop to bar the door behind you              -> farmer_slain       sound=door      (action_door.wav)
+[dragon_ally] The Dragon's Chains
+    ambient: spire (spire_ambient.wav)
+      1. Let the dragon take its freedom              -> good_dragon        sound=roar      (action_roar.wav)
+      2. Step between the dragon and the king         -> both_slain         sound=roar      (action_roar.wav)
+[good_punish] [GOOD] The King Falls
+    ambient: spire (spire_ambient.wav)
+      1. Play again                                   -> farm               sound=steps     (action_steps.wav)
+[good_break_spell] [GOOD] The Unmade Spell
+    ambient: spire (spire_ambient.wav)
+      1. Play again                                   -> farm               sound=steps     (action_steps.wav)
+[good_escape] [GOOD] The Long Road Home
+    ambient: farm (farm_ambient.wav)
+      1. Play again                                   -> farm               sound=steps     (action_steps.wav)
+[good_dragon] [GOOD] The Dragon Freed
+    ambient: mountain (mountain_ambient.wav)
+      1. Play again                                   -> farm               sound=steps     (action_steps.wav)
+[wife_slain] [DEATH] She Is Gone
+    ambient: spire (spire_ambient.wav)
+      1. Try again                                    -> farm               sound=steps     (action_steps.wav)
+[both_slain] [DEATH] Together
+    ambient: spire (spire_ambient.wav)
+      1. Try again                                    -> farm               sound=steps     (action_steps.wav)
+[farmer_slain] [DEATH] The Door
+    ambient: spire (spire_ambient.wav)
+      1. Try again                                    -> farm               sound=steps     (action_steps.wav)
+
