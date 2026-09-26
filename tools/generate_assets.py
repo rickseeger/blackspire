@@ -4,10 +4,13 @@ Run from the repo root with a dummy display driver (it never opens a window):
 
     SDL_VIDEODRIVER=dummy python3 tools/generate_assets.py
 
-Audio is synthesized with the stdlib ``wave`` module (no licensing issues, no
-external files).  Images are flat fairytale-style drawings made of pygame
-primitives, with the farmer drawn from the character-sheet palette so the
-picture matches the written description.
+Audio is a LEGACY placeholder only: the shipped ``assets/audio/*.wav`` files
+are now real recordings downloaded from Wikimedia Commons (see
+``docs/audio_sources.md``), not the synthesized beeps this module emits.  The
+synth functions are retained for reference but are not the audio source.
+Images are flat fairytale-style drawings made of pygame primitives, with the
+farmer drawn from the character-sheet palette so the picture matches the
+written description.
 """
 
 import math

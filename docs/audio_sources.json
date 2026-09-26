@@ -1,0 +1,340 @@
+{
+  "project": "Black Spire",
+  "generated_by": "G18 node 4 (sound system)",
+  "note": "Every sound below is a real recording downloaded from Wikimedia Commons (a CC0 / public-domain / CC-BY audio archive). No sound is synthesized. Each file records its source URL and license. CC BY 4.0 works require attribution; full attribution is in docs/audio_sources.md.",
+  "files": {
+    "farm_ambient.wav": {
+      "sources": [
+        {
+          "title": "File:Gentle breeze and birds singing.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Gentle_breeze_and_birds_singing.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/Gentle_breeze_and_birds_singing.ogg",
+          "license": "Public domain",
+          "author": "ezwa"
+        },
+        {
+          "title": "File:Medium rooster crowing.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Medium_rooster_crowing.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/Medium_rooster_crowing.ogg",
+          "license": "Public domain",
+          "author": "alys"
+        },
+        {
+          "title": "File:Hens leaving coop.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Hens_leaving_coop.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/Hens_leaving_coop.ogg",
+          "license": "Public domain",
+          "author": "alys"
+        },
+        {
+          "title": "File:Sheep bleating.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Sheep_bleating.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/Sheep_bleating.ogg",
+          "license": "Public domain",
+          "author": "earthcalling"
+        }
+      ],
+      "processing": "Layered mix of four public-domain field recordings (wind+birds bed, rooster crow, hens clucking, sheep bleating) into a 24s seamless loop.",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "village_ambient.wav": {
+      "sources": [
+        {
+          "title": "File:Restaurant ambience.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Restaurant_ambience.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/Restaurant_ambience.ogg",
+          "license": "Public domain",
+          "author": "stephan"
+        }
+      ],
+      "processing": "24s loop of a restaurant/crowd murmur (market-like babble), trimmed from a 76s recording.",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "road_ambient.wav": {
+      "sources": [
+        {
+          "title": "File:Gentle breeze and birds singing.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Gentle_breeze_and_birds_singing.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/Gentle_breeze_and_birds_singing.ogg",
+          "license": "Public domain",
+          "author": "ezwa"
+        }
+      ],
+      "processing": "24s loop of gentle breeze and birdsong (open country road).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "mountain_ambient.wav": {
+      "sources": [
+        {
+          "title": "File:Howling wind.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Howling_wind.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/Howling_wind.ogg",
+          "license": "CC0",
+          "author": "Tvabutzku1234"
+        }
+      ],
+      "processing": "24s loop of howling wind (high mountain pass).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "wood_ambient.wav": {
+      "sources": [
+        {
+          "title": "File:Forest ambience (Gravity Sound).wav",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Forest_ambience_%28Gravity_Sound%29.wav",
+          "page_url": "https://commons.wikimedia.org/wiki/Forest_ambience_%28Gravity_Sound%29.wav",
+          "license": "CC BY 4.0",
+          "author": "Gravity Sound"
+        }
+      ],
+      "processing": "24s loop of forest ambience (Gravity Sound game-audio pack).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "castle_ambient.wav": {
+      "sources": [
+        {
+          "title": "File:Cavern (Gravity Sound).wav",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Cavern_%28Gravity_Sound%29.wav",
+          "page_url": "https://commons.wikimedia.org/wiki/Cavern_%28Gravity_Sound%29.wav",
+          "license": "CC BY 4.0",
+          "author": "Gravity Sound"
+        }
+      ],
+      "processing": "24s loop of a stone cavern/dungeon echo (Gravity Sound game-audio pack).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "spire_ambient.wav": {
+      "sources": [
+        {
+          "title": "File:Soundscape (Gravity Sound).wav",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Soundscape_%28Gravity_Sound%29.wav",
+          "page_url": "https://commons.wikimedia.org/wiki/Soundscape_%28Gravity_Sound%29.wav",
+          "license": "CC BY 4.0",
+          "author": "Gravity Sound"
+        }
+      ],
+      "processing": "24s loop of a dark magical soundscape (Gravity Sound game-audio pack).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_steps.wav": {
+      "sources": [
+        {
+          "title": "File:Walking on gravel (Gravity Sound).mp3",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Walking_on_gravel_%28Gravity_Sound%29.mp3",
+          "page_url": "https://commons.wikimedia.org/wiki/Walking_on_gravel_%28Gravity_Sound%29.mp3",
+          "license": "CC BY 4.0",
+          "author": "Gravity Sound"
+        }
+      ],
+      "processing": "Loudest ~3.5s of walking-on-gravel footsteps (one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_run.wav": {
+      "sources": [
+        {
+          "title": "File:Running (Gravity Sound).wav",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Running_%28Gravity_Sound%29.wav",
+          "page_url": "https://commons.wikimedia.org/wiki/Running_%28Gravity_Sound%29.wav",
+          "license": "CC BY 4.0",
+          "author": "Gravity Sound"
+        }
+      ],
+      "processing": "Loudest ~4s of running footsteps (one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_gallop.wav": {
+      "sources": [
+        {
+          "title": "File:Six Horses Galloping By.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Six_Horses_Galloping_By.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/Six_Horses_Galloping_By.ogg",
+          "license": "CC0",
+          "author": "Freesound Community https://pixabay.com/users/freesound_community-46691455/ Bruno Auzet https://pixabay.com/sound-effects/nature-6-horses-gallopwav-14467/"
+        }
+      ],
+      "processing": "Loudest ~8s of horses galloping past (one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_scream.wav": {
+      "sources": [
+        {
+          "title": "File:Wilhelm Scream.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Wilhelm_Scream.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/Wilhelm_Scream.ogg",
+          "license": "CC0",
+          "author": "likely Sheb Wooley"
+        }
+      ],
+      "processing": "Wilhelm scream (the classic falling-cry), full 1.6s (one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_door.wav": {
+      "sources": [
+        {
+          "title": "File:Door handle creaking.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Door_handle_creaking.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/Door_handle_creaking.ogg",
+          "license": "Public domain",
+          "author": "stephan"
+        }
+      ],
+      "processing": "Loudest ~4s of a creaking door handle (one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_fire.wav": {
+      "sources": [
+        {
+          "title": "File:WWS Bonfireburning.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/WWS_Bonfireburning.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/WWS_Bonfireburning.ogg",
+          "license": "CC BY 4.0",
+          "author": "Work With Sounds / Werstas"
+        }
+      ],
+      "processing": "Loudest ~8s of a crackling bonfire (one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_sword.wav": {
+      "sources": [
+        {
+          "title": "File:Sword Clash (Gravity Sound).mp3",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Sword_Clash_%28Gravity_Sound%29.mp3",
+          "page_url": "https://commons.wikimedia.org/wiki/Sword_Clash_%28Gravity_Sound%29.mp3",
+          "license": "CC BY 4.0",
+          "author": "Gravity Sound"
+        }
+      ],
+      "processing": "A single sword clash, full ~1.1s (one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_splash.wav": {
+      "sources": [
+        {
+          "title": "File:Bathtub water splashes.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Bathtub_water_splashes.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/Bathtub_water_splashes.ogg",
+          "license": "Public domain",
+          "author": "gradha"
+        }
+      ],
+      "processing": "Loudest ~4s of bathtub water splashes (one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_wolf.wav": {
+      "sources": [
+        {
+          "title": "File:Wolf howls.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Wolf_howls.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/Wolf_howls.ogg",
+          "license": "Public domain",
+          "author": "?"
+        }
+      ],
+      "processing": "Loudest ~8s of wolves howling (one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_roar.wav": {
+      "sources": [
+        {
+          "title": "File:Yellowstone sound library - Grizzly Bears Roar - 001.mp3",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Yellowstone_sound_library_-_Grizzly_Bears_Roar_-_001.mp3",
+          "page_url": "https://commons.wikimedia.org/wiki/Yellowstone_sound_library_-_Grizzly_Bears_Roar_-_001.mp3",
+          "license": "Public domain",
+          "author": "NPS & MSU Acoustic Atlas / Jennifer Jerrett"
+        }
+      ],
+      "processing": "Loudest ~5s of a grizzly-bear roar (dragon roar stand-in, NPS Yellowstone library, one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_stone.wav": {
+      "sources": [
+        {
+          "title": "File:Rocks hitting together (Gravity Sound).wav",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Rocks_hitting_together_%28Gravity_Sound%29.wav",
+          "page_url": "https://commons.wikimedia.org/wiki/Rocks_hitting_together_%28Gravity_Sound%29.wav",
+          "license": "CC BY 4.0",
+          "author": "Gravity Sound"
+        }
+      ],
+      "processing": "Loudest ~3s of rocks hitting together (one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_magic.wav": {
+      "sources": [
+        {
+          "title": "File:Easy sparkle (Gravity Sound).wav",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Easy_sparkle_%28Gravity_Sound%29.wav",
+          "page_url": "https://commons.wikimedia.org/wiki/Easy_sparkle_%28Gravity_Sound%29.wav",
+          "license": "CC BY 4.0",
+          "author": "Gravity Sound"
+        }
+      ],
+      "processing": "Loudest ~4s of a magical sparkle (one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_whisper.wav": {
+      "sources": [
+        {
+          "title": "File:Whispering-example.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Whispering-example.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/Whispering-example.ogg",
+          "license": "CC0",
+          "author": "Mx. Granger"
+        }
+      ],
+      "processing": "A whispered phrase, full ~2.6s (one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_creak.wav": {
+      "sources": [
+        {
+          "title": "File:Squeaky stairs down (Gravity Sound).wav",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Squeaky_stairs_down_%28Gravity_Sound%29.wav",
+          "page_url": "https://commons.wikimedia.org/wiki/Squeaky_stairs_down_%28Gravity_Sound%29.wav",
+          "license": "CC BY 4.0",
+          "author": "Gravity Sound"
+        }
+      ],
+      "processing": "Squeaky stairs descending, full ~4.2s (one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_gasp.wav": {
+      "sources": [
+        {
+          "title": "File:Breathing man.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Breathing_man.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/Breathing_man.ogg",
+          "license": "Public domain",
+          "author": "hugh"
+        }
+      ],
+      "processing": "Loudest ~1.2s of a sharp breath (one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "action_chains.wav": {
+      "sources": [
+        {
+          "title": "File:WWS Chainbendingmachine.ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/WWS_Chainbendingmachine.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/WWS_Chainbendingmachine.ogg",
+          "license": "CC BY 4.0",
+          "author": "Work With Sounds / Konrad Gutkowski"
+        }
+      ],
+      "processing": "Loudest ~6s of an iron-chain bending machine (dungeon chains stand-in, one-shot).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    },
+    "death_bell.wav": {
+      "sources": [
+        {
+          "title": "File:Samariter Church Bell I (Es).ogg",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Samariter_Church_Bell_I_%28Es%29.ogg",
+          "page_url": "https://commons.wikimedia.org/wiki/Samariter_Church_Bell_I_(Es).ogg",
+          "license": "CC BY-SA 4.0",
+          "author": "Samariterkirche (Wikimedia Commons)"
+        }
+      ],
+      "processing": "A single isolated toll (strike + full decay) of the Samariter Church Bell I (E-flat).",
+      "format": "mono 16-bit PCM WAV, 22050 Hz"
+    }
+  }
+}

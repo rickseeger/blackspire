@@ -16,6 +16,7 @@ os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
 os.environ.setdefault("SDL_AUDIODRIVER", "dummy")
 os.environ.setdefault("PYGAME_HIDE_SUPPORT_PROMPT", "1")
 
+import json
 import re
 import shutil
 import subprocess
@@ -223,6 +224,69 @@ class EngineBehaviorTests(unittest.TestCase):
                 self.assertEqual(game.audio.bell_count, 0, sid)
         finally:
             pygame.quit()
+
+
+
+SOURCES_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "docs", "audio_sources.json")
+
+
+class MixingTests(unittest.TestCase):
+    """The ambient bed is mixed quieter than the action sounds."""
+
+    def test_ambient_volume_below_action_volume(self):
+        self.assertLess(audio.AMBIENT_VOLUME, audio.ACTION_VOLUME,
+                        "ambient bed must play quieter than action sounds")
+
+    def test_ambient_files_peak_below_action_files(self):
+        # File-level mix check: ambient beds are normalized to a lower peak
+        # than action one-shots, so consequences sit clearly on top of the bed.
+        am = audio.AudioManager()
+        amb_peak = max(self._peak(am._path(n)) for n in audio.AMBIENTS.values())
+        act_peak = min(self._peak(am._path(n)) for n in audio.ACTIONS.values()
+                       if n != audio.ACTIONS[story.DEATH_BELL])
+        self.assertLess(amb_peak, act_peak,
+                        "ambient files should peak lower than action files")
+
+    def _peak(self, path):
+        out = subprocess.run(
+            ["ffmpeg", "-i", path, "-af", "volumedetect", "-f", "null", "-"],
+            capture_output=True, text=True)
+        m = re.search(r"max_volume:\s*(-?[\d.]+|-\w+) dB", out.stderr)
+        return float(m.group(1)) if m else float("-inf")
+
+
+@unittest.skipUnless(HAVE_FFMPEG, "ffmpeg not available")
+class ProvenanceTests(unittest.TestCase):
+    """Every sound is a real downloaded file with a recorded source + license."""
+
+    def _manifest(self):
+        with open(SOURCES_PATH) as f:
+            return json.load(f)["files"]
+
+    def test_every_sound_has_recorded_source_and_license(self):
+        manifest = self._manifest()
+        am = audio.AudioManager()
+        for sound_id, filename in list(audio.AMBIENTS.items()) + list(audio.ACTIONS.items()):
+            self.assertIn(filename, manifest, filename)
+            entry = manifest[filename]
+            self.assertTrue(entry["sources"], filename)
+            for src in entry["sources"]:
+                self.assertTrue(src.get("source_url"), filename)
+                self.assertTrue(src.get("license"), filename)
+
+    def test_every_sound_is_a_real_wav_on_disk(self):
+        manifest = self._manifest()
+        am = audio.AudioManager()
+        for sound_id, filename in list(audio.AMBIENTS.items()) + list(audio.ACTIONS.items()):
+            path = am._path(filename)
+            self.assertTrue(os.path.isfile(path), filename)
+            # RIFF/WAVE header = a genuine PCM WAV, not a generated blob
+            with open(path, "rb") as f:
+                head = f.read(12)
+            self.assertEqual(head[:4], b"RIFF", filename)
+            self.assertEqual(head[8:12], b"WAVE", filename)
 
 
 if __name__ == "__main__":

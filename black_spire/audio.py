@@ -7,8 +7,9 @@ large death-bell toll on the death scene.
 The scene -> ambient bed and choice -> action-sound relationships live in
 ``story.py`` (the ``Scene.ambient`` and ``Choice.action_sound`` fields); this
 module maps those ids to on-disk wav files under ``assets/audio/``.  Every
-asset is procedurally generated (see ``tools/generate_assets.py``), so there
-are no licensing concerns and the files stay small.
+asset is a real recording downloaded from Wikimedia Commons (a CC0 /
+public-domain / CC-BY archive) -- nothing is synthesized.  Source URLs and
+licenses for every file are recorded in ``docs/audio_sources.json`` (+ .md).
 """
 
 import os
@@ -51,6 +52,12 @@ ACTIONS = {
     "chains": "action_chains.wav",     # iron chains clanking
     "bell": "death_bell.wav",          # the single death bell
 }
+
+
+# Mix levels: the always-on ambient bed is mixed quieter than the one-shot
+# action sounds, so consequences are clearly audible on top of the bed.
+AMBIENT_VOLUME = 0.55
+ACTION_VOLUME = 0.9
 
 
 def validate_audio(scenes):
@@ -110,7 +117,7 @@ class AudioManager:
             raise KeyError("unknown ambient id %r" % ambient_id)
         snd = self.load(ambient_id)
         pygame.mixer.Channel(0).play(snd, loops=-1)
-        pygame.mixer.Channel(0).set_volume(0.55)
+        pygame.mixer.Channel(0).set_volume(AMBIENT_VOLUME)
 
     def stop_ambient(self):
         if self.enabled:
@@ -118,7 +125,7 @@ class AudioManager:
         self.current_ambient = None
 
     # -- one-shot action sounds ---------------------------------------
-    def play_action(self, sound_id, volume=0.9):
+    def play_action(self, sound_id, volume=ACTION_VOLUME):
         self.last_action = sound_id
         self.action_log.append(sound_id)
         if not self.enabled:
