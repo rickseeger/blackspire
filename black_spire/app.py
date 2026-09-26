@@ -38,6 +38,11 @@ CHOICE_COLOR = (250, 246, 232)
 CHOICE_BG = (44, 52, 62)
 CHOICE_BG_HOVER = (64, 74, 88)
 
+# Cross-platform font stack: DejaVu Sans on Linux, Segoe UI / Arial on Windows.
+# pygame.font.SysFont falls back to its bundled default if none match, so this
+# never raises -- it just keeps the text consistent across both platforms.
+FONT_STACK = "dejavusans,segoeui,arial,verdana"
+
 
 class Game:
     def __init__(self, start_scene=None, size=(WIDTH, HEIGHT)):
@@ -56,9 +61,9 @@ class Game:
         self.screen = pygame.display.set_mode(size)
         pygame.display.set_caption("Black Spire \u2014 a fairytale")
         self.clock = pygame.time.Clock()
-        self.font_title = pygame.font.SysFont("dejavusans", 30, bold=True)
-        self.font_body = pygame.font.SysFont("dejavusans", 21)
-        self.font_choice = pygame.font.SysFont("dejavusans", 20)
+        self.font_title = pygame.font.SysFont(FONT_STACK, 30, bold=True)
+        self.font_body = pygame.font.SysFont(FONT_STACK, 21)
+        self.font_choice = pygame.font.SysFont(FONT_STACK, 20)
 
         self.story = story.StoryEngine(start=start_scene)
         self.illustrations = art.Illustrations()
