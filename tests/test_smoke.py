@@ -153,7 +153,7 @@ class CharacterSheetTests(unittest.TestCase):
 
     def test_farm_illustration_matches_sheet(self):
         tunic = CHARACTERS["farmer"]["palette"]["tunic"]
-        surf = pygame.image.load(art.image_path("farm"))
+        surf = pygame.image.load(art.image_path("farm.png"))
         self.assertEqual(surf.get_size(), art.ILLUSTRATION_SIZE)
         self.assertTrue(self._contains(surf, tunic, tolerance=4),
                         "farm illustration lacks the tunic color %s" % (tunic,))
@@ -171,8 +171,9 @@ class CharacterSheetTests(unittest.TestCase):
 
 class AssetTests(unittest.TestCase):
     def test_all_illustrations_load(self):
+        ill = art.Illustrations()
         for sid, sc in story.SCENES.items():
-            surf = pygame.image.load(art.image_path(sc.image))
+            surf = ill.get_scene(sid)
             self.assertEqual(surf.get_size(), art.ILLUSTRATION_SIZE, sid)
 
     def test_all_sounds_load_and_have_length(self):

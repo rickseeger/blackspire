@@ -72,7 +72,7 @@ class Game:
     # -- scene transitions --------------------------------------------
     def _enter_scene(self, scene_id):
         scene = self.story.scenes[scene_id]
-        self.illustrations.load(scene.image)
+        self.illustrations.load_scene(scene_id)
         self.hover = None
         self.choice_rects = []
         # every scene plays its ambient bed by default; a death scene adds
@@ -112,7 +112,7 @@ class Game:
         self.screen.fill(BG_COLOR)
 
         # left: illustration inside a framed panel
-        ill = self.illustrations.get(self.story.scene().image)
+        ill = self.illustrations.get_scene(self.story.scene().id)
         panel = pygame.Surface((ILL_W + 16, ILL_H + 16))
         panel.fill(PANEL_BG)
         pygame.draw.rect(panel, BORDER, panel.get_rect(), 2)

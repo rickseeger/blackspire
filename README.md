@@ -92,7 +92,8 @@ scenes, many death endings and several good endings, 2-4 choices per non-termina
 scene, every choice resolves to a valid scene, every scene and every ending is
 reachable from the start, the three required good endings are present, a death
 path tolls the bell exactly once, a good-ending path never tolls it, scene text
-renders next to the illustration, the farmer matches his written description,
+renders next to the illustration, every scene references an image slot in
+the manifest, the farmer matches his written description,
 every scene plays its ambient bed, every choice triggers its mapped action
 sound, every death path tolls exactly one bell, and every sound asset is real
 and non-silent (ffprobe duration + ffmpeg loudness).
@@ -111,18 +112,32 @@ reachability of every scene and ending, and a concrete path to each ending.
       story.py            data-driven story graph (~68 scenes) + pure story engine
       characters.py       character sheet (one-line descriptions + palettes)
       audio.py            layered audio (ambient bed / actions / death bell)
-      art.py              illustration loader
+      art.py              per-scene illustration loader (image manifest)
       app.py              pygame window, layout, input, main loop
     assets/audio/         procedurally generated wavs
-    assets/images/        flat placeholder illustrations (png)
+    assets/images/        flat placeholder illustrations (png) + manifest.json
     tools/generate_assets.py   regenerates all audio + images from scratch
+    tools/generate_image_manifest.py   generate/verify the per-scene image manifest
     tools/report_story.py      scene/choice/ending report + reachability walk
     tools/report_audio.py      scene/choice-to-audio map + validation
     docs/story_report.txt      generated story report
     docs/audio_map.txt/.json   generated scene/choice-to-audio map
     tests/test_smoke.py        automated smoke test
     tests/test_audio.py        automated audio-layer test
+    tests/test_images.py       image manifest + per-scene loader test
 
 Art is intentionally low-effort placeholder in one consistent style - a later
 node owns the real art set.  Visual and sound *quality* are deferred to the
 human playtest, not gated here.
+
+## Illustration manifest
+
+Each scene references an image *slot* through a per-scene manifest at
+`assets/images/manifest.json` (keyed by scene id -> image filename).  The
+renderer loads art by scene id via `black_spire.art.Illustrations`, which reads
+this manifest - so swapping in real art later means replacing the PNG files and
+editing the manifest, not touching the engine or the story data.  Regenerate or
+verify it with `tools/generate_image_manifest.py` (add `--check` to fail on a
+stale manifest).  `tools/playthrough.py` runs a full scripted playthrough that
+walks several death and good endings and asserts the ambient/action/bell/image
+wiring end to end.
