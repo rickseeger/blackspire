@@ -123,7 +123,8 @@ reachability of every scene and ending, and a concrete path to each ending.
       art.py              per-scene illustration loader (image manifest)
       app.py              pygame window, layout, input, main loop
     assets/audio/         procedurally generated wavs
-    assets/images/        flat placeholder illustrations (png) + manifest.json
+    assets/images/        node-3 AI illustration set (512px engine PNG per scene,
+                         manifest.json, 1024px originals under originals/)
     tools/generate_assets.py   regenerates all audio + images from scratch
     tools/generate_image_manifest.py   generate/verify the per-scene image manifest
     tools/report_story.py      scene/choice/ending report + reachability walk
@@ -134,20 +135,29 @@ reachability of every scene and ending, and a concrete path to each ending.
     tests/test_audio.py        automated audio-layer test
     tests/test_images.py       image manifest + per-scene loader test
     tests/test_coverage.py     exhaustive edge-covering walk + coverage report
+    tests/test_consistency.py  character-sheet + illustration consistency check
     black_spire/coverage.py    walk engine + coverage-report writer
+    black_spire/consistency.py  character-sheet + illustration consistency check
     docs/coverage_report.txt   emitted coverage report (+ .json)
+    docs/character_sheet.md     fixed cast + locked style
+    docs/image_prompts.json     scene id -> prompt + API metadata
+    docs/scene_characters.json  scene id -> characters present
 
-Art is intentionally low-effort placeholder in one consistent style - a later
-node owns the real art set.  Visual and sound *quality* are deferred to the
-human playtest, not gated here.
+Every scene now carries a genuine AI illustration (OpenAI gpt-image-1, 1024x1024,
+with a 512x512 engine copy) in the locked cinematic digital fantasy style; the
+1024x1024 originals live under `assets/images/originals/`.  Each recurring
+character has ONE fixed written description (`docs/character_sheet.md`) injected
+verbatim into every scene prompt, and `tests/test_consistency.py` enforces that
+contract at the code level.  Visual and sound *quality* are still deferred to
+the human playtest, not gated here.
 
 ## Illustration manifest
 
 Each scene references an image *slot* through a per-scene manifest at
 `assets/images/manifest.json` (keyed by scene id -> image filename).  The
 renderer loads art by scene id via `black_spire.art.Illustrations`, which reads
-this manifest - so swapping in real art later means replacing the PNG files and
-editing the manifest, not touching the engine or the story data.  Regenerate or
+this manifest - so the node-3 art set is wired in purely by the manifest
+(scene id -> `<scene_id>.png`), with no engine or story changes.  Regenerate or
 verify it with `tools/generate_image_manifest.py` (add `--check` to fail on a
 stale manifest).  `tools/playthrough.py` runs a full scripted playthrough that
 walks several death and good endings and asserts the ambient/action/bell/image

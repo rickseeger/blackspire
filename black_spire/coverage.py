@@ -29,7 +29,7 @@ from dataclasses import asdict, dataclass, field
 
 import pygame
 
-from . import art, audio, story
+from . import art, audio, consistency, story
 from .app import Game
 
 
@@ -220,11 +220,12 @@ def walk(verify_render=True):
 
 
 def reference_integrity():
-    """Return the combined dangling-reference problems (choice / audio / image)."""
+    """Return the combined dangling-reference problems (choice / audio / image / cast)."""
     return (
         story.validate_graph()
         + audio.validate_audio(story.SCENES)
         + art.validate_image_manifest(story.SCENES)
+        + consistency.validate_character_consistency(story.SCENES)
     )
 
 

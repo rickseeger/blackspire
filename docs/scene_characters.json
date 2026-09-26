@@ -1,0 +1,247 @@
+{
+  "farm": [
+    "farmer"
+  ],
+  "animals": [
+    "farmer"
+  ],
+  "farewell": [
+    "farmer",
+    "wife"
+  ],
+  "errand": [
+    "farmer"
+  ],
+  "herald": [
+    "farmer",
+    "herald"
+  ],
+  "return": [
+    "farmer",
+    "neighbor"
+  ],
+  "gather": [
+    "farmer"
+  ],
+  "road": [
+    "farmer"
+  ],
+  "mountain": [
+    "farmer"
+  ],
+  "mountain_ledge": [
+    "farmer"
+  ],
+  "mountain_scree": [
+    "farmer"
+  ],
+  "mountain_fall": [
+    "farmer"
+  ],
+  "mountain_ridge": [
+    "farmer"
+  ],
+  "wizard_hut": [
+    "farmer",
+    "wizard"
+  ],
+  "dragon_pass": [
+    "farmer",
+    "dragon"
+  ],
+  "dragon_parley": [
+    "farmer",
+    "dragon"
+  ],
+  "dragon_riddle": [
+    "farmer",
+    "dragon"
+  ],
+  "dragon_wrong": [
+    "farmer",
+    "dragon"
+  ],
+  "dragon_attack": [
+    "farmer",
+    "dragon"
+  ],
+  "dragon_sneak": [
+    "farmer",
+    "dragon"
+  ],
+  "dragon_caught": [
+    "farmer",
+    "dragon"
+  ],
+  "dragon_free": [
+    "farmer",
+    "dragon"
+  ],
+  "wood": [
+    "farmer"
+  ],
+  "wood_light": [
+    "farmer"
+  ],
+  "wood_swamp": [
+    "farmer"
+  ],
+  "wood_river": [
+    "farmer"
+  ],
+  "river_wade": [
+    "farmer"
+  ],
+  "wood_cross": [
+    "farmer"
+  ],
+  "wood_wolf": [
+    "farmer"
+  ],
+  "wolf_attack": [
+    "farmer"
+  ],
+  "wood_edge": [
+    "farmer"
+  ],
+  "gate": [
+    "farmer"
+  ],
+  "gate_guards": [
+    "farmer",
+    "captain"
+  ],
+  "gate_talk": [
+    "farmer",
+    "captain"
+  ],
+  "gate_fight": [
+    "farmer",
+    "captain"
+  ],
+  "gate_wall": [
+    "farmer"
+  ],
+  "wall_climb": [
+    "farmer"
+  ],
+  "wall_fall": [
+    "farmer"
+  ],
+  "wall_drain": [
+    "farmer"
+  ],
+  "courtyard": [
+    "farmer"
+  ],
+  "courtyard_open": [
+    "farmer"
+  ],
+  "courtyard_death": [
+    "farmer"
+  ],
+  "dungeon": [
+    "farmer"
+  ],
+  "dungeon_wizard": [
+    "farmer",
+    "wizard"
+  ],
+  "dungeon_despair": [
+    "farmer"
+  ],
+  "kitchen": [
+    "farmer",
+    "servant"
+  ],
+  "passage": [
+    "farmer"
+  ],
+  "great_hall": [
+    "farmer",
+    "king"
+  ],
+  "throne_approach": [
+    "farmer",
+    "king"
+  ],
+  "throne_seen": [
+    "farmer",
+    "king"
+  ],
+  "throne_demand": [
+    "farmer",
+    "king"
+  ],
+  "spire_stairs": [
+    "farmer"
+  ],
+  "spire": [
+    "farmer",
+    "wife"
+  ],
+  "queen_ghost": [
+    "farmer",
+    "queen_ghost"
+  ],
+  "spire_trap": [
+    "farmer"
+  ],
+  "wife_found": [
+    "farmer",
+    "wife"
+  ],
+  "king_face": [
+    "farmer",
+    "king",
+    "wife"
+  ],
+  "king_fight": [
+    "farmer",
+    "king"
+  ],
+  "spell_break": [
+    "farmer"
+  ],
+  "escape_run": [
+    "farmer",
+    "wife"
+  ],
+  "dragon_ally": [
+    "farmer",
+    "dragon"
+  ],
+  "good_punish": [
+    "farmer",
+    "king",
+    "wife"
+  ],
+  "good_break_spell": [
+    "farmer",
+    "wife",
+    "wizard",
+    "dragon"
+  ],
+  "good_escape": [
+    "farmer",
+    "wife"
+  ],
+  "good_dragon": [
+    "farmer",
+    "wife",
+    "dragon"
+  ],
+  "wife_slain": [
+    "farmer",
+    "wife",
+    "king"
+  ],
+  "both_slain": [
+    "farmer",
+    "king",
+    "wife"
+  ],
+  "farmer_slain": [
+    "farmer"
+  ]
+}
