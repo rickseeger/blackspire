@@ -1,10 +1,10 @@
-"""Generate the per-scene image manifest (assets/images/manifest.json).
+"""Regenerate the per-scene image manifest (assets/images/manifest.json).
 
 The manifest is the single source of truth mapping scene id -> image filename
-under ``assets/images/``.  For now every scene points at one of the flat
-placeholder illustrations (its ``Scene.image`` slot); node 8 will swap these
-entries (and the PNG files) for real art without touching the engine or the
-story data.
+under ``assets/images/``.  Node 3 landed the real AI art set: one gpt-image-1
+illustration per scene id (``<scene_id>.png``, a 512x512 engine copy, with the
+1024x1024 originals kept under ``assets/images/originals/``).  The engine and
+story data are untouched; this tool only rewrites the manifest.
 
 Run from the repo root:
 
@@ -28,16 +28,17 @@ from black_spire import art, story  # noqa: E402
 def build_manifest():
     return {
         "format": "blackspire-image-manifest",
-        "version": 1,
+        "version": 2,
         "note": (
             "Per-scene illustration manifest, keyed by scene id -> image filename "
-            "under assets/images/.  Placeholder art until node 8 lands the real "
-            "set; edit this file (not the engine) to swap a scene's illustration."
+            "under assets/images/.  Node 3 landed the real AI art set: one "
+            "gpt-image-1 illustration per scene id, with the 1024x1024 originals "
+            "under assets/images/originals/."
         ),
         "default": "farm.png",
         "scenes": {
-            sid: "%s.png" % scene.image
-            for sid, scene in story.SCENES.items()
+            sid: "%s.png" % sid
+            for sid in story.SCENES
         },
     }
 

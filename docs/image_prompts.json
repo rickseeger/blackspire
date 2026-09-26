@@ -1,0 +1,551 @@
+{
+  "style": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.",
+  "model": "gpt-image-1",
+  "size": "1024x1024",
+  "scenes": {
+    "farm": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Farm - a humble farmstead at sunrise, a small wooden farmhouse and barn, chickens scratching in the dirt and sheep in a field, golden morning light.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: warm golden dawn, peaceful. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422186,
+      "orig_bytes": 1815739,
+      "engine_bytes": 410439,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "farewell": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: Farewell - a farmer and his wife sharing a tender goodbye inside the doorway of their farmhouse, she brushes flour from his sleeve.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. Lena the farmer's wife: a gentle, beautiful woman with long dark brown hair in a single braid, warm eyes and soft features, wearing a faded blue dress and a white apron dusted with flour.\n\nMood and lighting: warm intimate interior light. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422188,
+      "orig_bytes": 1695718,
+      "engine_bytes": 368149,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "animals": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Animals - a farmer scattering grain to the chickens while sheep watch from a field beside a wooden farmhouse.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: calm warm morning light. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422227,
+      "orig_bytes": 1506033,
+      "engine_bytes": 388442,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "gather": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: What You Carry - a farmer gathering his few belongings by lamplight: a knife, a loaf of bread, a water skin and an old coat.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: dim determined interior. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422247,
+      "orig_bytes": 1680883,
+      "engine_bytes": 382097,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "herald": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Old Woman - an old woman seizing the arm of a farmer on a village road, warning him urgently.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Old Woman: a bent, frail old woman with white hair and a weathered wrinkled face, wearing a grey shawl over a dark dress, leaning on a wooden walking stick.\n\nMood and lighting: tense, overcast, ominous warning. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422248,
+      "orig_bytes": 1529437,
+      "engine_bytes": 351270,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "errand": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Errand - a farmer walking a dusty road toward a village market, carrying a basket of eggs.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: bright midday, village bustle. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422248,
+      "orig_bytes": 1977652,
+      "engine_bytes": 436257,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "return": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: Home - a farmer running home to an open farmhouse door, the house empty, a worried neighbor meeting him, half-kneaded bread dough on the table inside.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Neighbor: a sturdy middle-aged villager with a worried face and a brown beard, wearing a brown wool coat over a plain linen shirt.\n\nMood and lighting: shocked, cold dusk light. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422248,
+      "orig_bytes": 1582808,
+      "engine_bytes": 348259,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "road": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Fork in the Road - a farmer at a fork in a road, a dark castle tower rising like a finger against a stormy sky, one path climbing a mountain and one sinking into a dark wood.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: epic ominous twilight. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422263,
+      "orig_bytes": 1759998,
+      "engine_bytes": 355763,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "mountain_ledge": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Narrow Ledge - a farmer edging along a ledge no wider than his shoulders, mist hiding the valley far below.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: vertiginous, cold mist. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422284,
+      "orig_bytes": 1550294,
+      "engine_bytes": 335540,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "mountain_scree": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: Loose Rock - a farmer scrambling up a slope of loose broken stone that shifts with every step.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: precarious, gravel slides. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422285,
+      "orig_bytes": 1667385,
+      "engine_bytes": 381101,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "mountain": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Mountain Path - a steep narrow mountain path cut into rock, loose stones, wind whipping a farmer's coat.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: high winds, exposed heights. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422287,
+      "orig_bytes": 1698431,
+      "engine_bytes": 364249,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "mountain_fall": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Fall - a farmer falling from a crumbling mountain ledge, stone giving way, the valley below.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: dizzying plunge, wind. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422289,
+      "orig_bytes": 2008349,
+      "engine_bytes": 441057,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "mountain_ridge": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Ridge - a farmer on a mountain ridge between two peaks, a thin thread of smoke rising from a hut nestled in the rocks, a pass ahead.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: clear air, distant hut. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422309,
+      "orig_bytes": 1750692,
+      "engine_bytes": 384587,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "dragon_pass": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Dragon's Pass - a wide ledge of scorched stone, a vast green dragon lying across the path before a farmer, smoke curling from its nostrils.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Dragon: a vast ancient dragon with emerald-green scales and a pale underbelly, huge leathery wings and golden knowing eyes, with smoke curling from its nostrils.\n\nMood and lighting: ominous, smoke, waiting. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422323,
+      "orig_bytes": 1555286,
+      "engine_bytes": 333127,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "wizard_hut": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Wizard's Hut - a small crooked hut hung with herbs and bone wind-chimes, an old wizard in grey robes standing in the doorway facing a farmer.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Wizard: a hunched old wizard with a long white beard, deep-set grey eyes and a weathered wrinkled face, wearing grey robes, leaning on a gnarled wooden staff.\n\nMood and lighting: mysterious, warm firelight from the hut. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422324,
+      "orig_bytes": 1610946,
+      "engine_bytes": 344000,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "dragon_parley": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: Parley with the Dragon - a vast green dragon watching a farmer without moving, one golden eye open, a tense standoff.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Dragon: a vast ancient dragon with emerald-green scales and a pale underbelly, huge leathery wings and golden knowing eyes, with smoke curling from its nostrils.\n\nMood and lighting: tense, low thunder, eye contact. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422325,
+      "orig_bytes": 1454729,
+      "engine_bytes": 319910,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "dragon_riddle": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Dragon's Riddle - a vast green dragon lifting its head to ask a riddle of a farmer, its golden eye gleaming.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Dragon: a vast ancient dragon with emerald-green scales and a pale underbelly, huge leathery wings and golden knowing eyes, with smoke curling from its nostrils.\n\nMood and lighting: testing, gleaming eye. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422327,
+      "orig_bytes": 1441686,
+      "engine_bytes": 311493,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "dragon_wrong": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Dragon's Flame - a vast green dragon opening its jaws, fire erupting toward a farmer on scorched stone.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Dragon: a vast ancient dragon with emerald-green scales and a pale underbelly, huge leathery wings and golden knowing eyes, with smoke curling from its nostrils.\n\nMood and lighting: inferno, blinding fire. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422348,
+      "orig_bytes": 1596800,
+      "engine_bytes": 373023,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "dragon_sneak": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: Sneaking Past - a farmer pressing into the shadows to slip past a vast green dragon whose tail sweeps the stone.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Dragon: a vast ancient dragon with emerald-green scales and a pale underbelly, huge leathery wings and golden knowing eyes, with smoke curling from its nostrils.\n\nMood and lighting: tense stealth, watching eye. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422361,
+      "orig_bytes": 1656196,
+      "engine_bytes": 349904,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "dragon_attack": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Dragon's Flame - a farmer charging a vast green dragon with a small knife as fire gathers in the dragon's throat.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Dragon: a vast ancient dragon with emerald-green scales and a pale underbelly, huge leathery wings and golden knowing eyes, with smoke curling from its nostrils.\n\nMood and lighting: doomed charge, fire kindling. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422361,
+      "orig_bytes": 1568097,
+      "engine_bytes": 343246,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "dragon_caught": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Dragon's Flame - a vast green dragon pinning a farmer to the stone with its tail, fire kindling in its throat.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Dragon: a vast ancient dragon with emerald-green scales and a pale underbelly, huge leathery wings and golden knowing eyes, with smoke curling from its nostrils.\n\nMood and lighting: trapped, fire imminent. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422365,
+      "orig_bytes": 1550173,
+      "engine_bytes": 340230,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "dragon_free": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: Past the Dragon - a vast green dragon shifting aside to let a farmer pass, a dark castle wall rising ahead.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Dragon: a vast ancient dragon with emerald-green scales and a pale underbelly, huge leathery wings and golden knowing eyes, with smoke curling from its nostrils.\n\nMood and lighting: reluctant respect, castle ahead. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422365,
+      "orig_bytes": 1500248,
+      "engine_bytes": 350339,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "wood": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Dark Wood - a dark close wood with crowded trees, pale drifting lights bobbing between the trunks off the path.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: dark, eerie, no birds. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422382,
+      "orig_bytes": 1590913,
+      "engine_bytes": 337322,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "wood_light": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Wisps - pale lovely will-o'-the-wisps dancing over a dark marsh ahead of a farmer, the ground soft and wet.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: eerie beauty, marsh glow. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422396,
+      "orig_bytes": 1662556,
+      "engine_bytes": 362789,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "wood_swamp": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Bog - a farmer sinking into a dark bog, marsh closing over his chest, pale lights dancing beyond reach.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: drowning marsh, cold. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422398,
+      "orig_bytes": 1543534,
+      "engine_bytes": 347640,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "river_wade": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Current - a farmer being swept under by a cold black river, the current closing over his head.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: cold, swallowed by water. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422401,
+      "orig_bytes": 1626359,
+      "engine_bytes": 351116,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "wood_river": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The River - a black fast loud river with a fallen tree spanning it like a bridge, white water churning around rocks.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: dark rushing water. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422403,
+      "orig_bytes": 1695593,
+      "engine_bytes": 371655,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "wood_cross": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Far Bank - a farmer crossing a fallen tree over a roaring river, dropping onto the far bank.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: careful crossing. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422423,
+      "orig_bytes": 1926129,
+      "engine_bytes": 396116,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "wood_wolf": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Wolves - wolves stepping out of the dark to ring a farmer in a slow circle, eyes like coals, hackles raised.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: encircled, menacing. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422434,
+      "orig_bytes": 1721955,
+      "engine_bytes": 372330,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "wolf_attack": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Wolves - a wolf pack closing on a running farmer in a dark wood.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: panic, dark swallow. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422437,
+      "orig_bytes": 1522405,
+      "engine_bytes": 339272,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "wood_edge": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: Out of the Wood - a farmer holding his ground against retreating wolves, a black castle wall rising ahead.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: standoff, dawn breaking. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422442,
+      "orig_bytes": 1759854,
+      "engine_bytes": 386257,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "gate": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Castle Gate - a massive castle gate with torches burning in iron brackets, guards beneath the arch, a black tower looming above.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: imposing, torchlit. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422442,
+      "orig_bytes": 1587770,
+      "engine_bytes": 358285,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "gate_guards": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Guards - broad guards in dark steel at a castle gate, their captain stepping forward with one hand on his sword, facing a farmer.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Guard Captain: a broad, scarred soldier with a shaved head and a short beard, grim expression, wearing dark steel armor and a black cloak.\n\nMood and lighting: confrontation, torchlight. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422462,
+      "orig_bytes": 1438566,
+      "engine_bytes": 328183,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "gate_talk": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Guard Captain - a scarred guard captain in dark steel listening to a farmer at a castle gate, a flicker of shared grief in his face.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Guard Captain: a broad, scarred soldier with a shaved head and a short beard, grim expression, wearing dark steel armor and a black cloak.\n\nMood and lighting: tense sympathy, torchlight. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422472,
+      "orig_bytes": 1727620,
+      "engine_bytes": 384851,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "gate_fight": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Guards' Swords - guards in dark steel closing on a farmer at a castle gate, swords drawn.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Guard Captain: a broad, scarred soldier with a shaved head and a short beard, grim expression, wearing dark steel armor and a black cloak.\n\nMood and lighting: overwhelmed, cold steel. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422476,
+      "orig_bytes": 1669441,
+      "engine_bytes": 368715,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "gate_wall": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Wall - a farmer following a castle wall as torchlight fades, a dark drain low in the stone where moat water runs out.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: stealth, fading light. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422478,
+      "orig_bytes": 1581324,
+      "engine_bytes": 340378,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "wall_climb": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: Scaling the Wall - a farmer digging his fingers into the cracks of a castle wall, climbing, a stone coming loose under his foot.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: climbing, danger, night. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422480,
+      "orig_bytes": 1619819,
+      "engine_bytes": 355786,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "wall_fall": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Wall - a farmer falling from a castle wall, the wall rushing past, stones below.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: plunging, night. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422501,
+      "orig_bytes": 1600023,
+      "engine_bytes": 346989,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "wall_drain": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Drain - a farmer crawling through a dark stone drain, cold water to his chest, a grate of light ahead.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: cramped, wet, cold. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422510,
+      "orig_bytes": 1578780,
+      "engine_bytes": 351298,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "courtyard_open": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: Seen in the Yard - a farmer stepping into the open courtyard as a shout goes up, guards turning toward him.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: alarm, torchlight. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422516,
+      "orig_bytes": 1553422,
+      "engine_bytes": 358219,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "courtyard": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Courtyard - a wide open castle courtyard swept by torchlight, guards pacing the walls, a kitchen door ajar.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: open, exposed, torchlight. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422517,
+      "orig_bytes": 1768009,
+      "engine_bytes": 384766,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "courtyard_death": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Chase - a farmer running across a courtyard with no opening doors, guards closing in with swords.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: hunted, closing in. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422521,
+      "orig_bytes": 1811689,
+      "engine_bytes": 394408,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "dungeon": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Dungeon - a farmer thrown into a dark cold cell, an iron door clanging shut, wet straw on the floor.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: bleak, cold dark. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422541,
+      "orig_bytes": 1771238,
+      "engine_bytes": 367554,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "dungeon_wizard": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Prisoner - an old wizard in torn grey robes reaching through the bars of a dungeon cell to press a smooth black stone into a farmer's hand.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Wizard: a hunched old wizard with a long white beard, deep-set grey eyes and a weathered wrinkled face, wearing grey robes, leaning on a gnarled wooden staff.\n\nMood and lighting: dim hope, torchlight. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422549,
+      "orig_bytes": 1634733,
+      "engine_bytes": 362586,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "dungeon_despair": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Long Dark - a farmer slumped alone in a dark dungeon cell, the fight gone out of him.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: hopeless, cold dark. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422553,
+      "orig_bytes": 1596749,
+      "engine_bytes": 356852,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "kitchen": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Kitchen - a blaze of fire and clatter in a castle kitchen, a kind serving girl passing with a tray of bread, a farmer slipping through.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Serving Girl: a quick, kind young serving girl with brown hair tied back, wearing a linen apron over a simple brown dress, carrying a tray of bread.\n\nMood and lighting: warm chaos, firelight. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422557,
+      "orig_bytes": 1779096,
+      "engine_bytes": 375775,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "passage": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Servants' Passage - a narrow dark servants' passage running behind castle walls, a farmer moving through it.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: secretive, dark. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422558,
+      "orig_bytes": 1556269,
+      "engine_bytes": 330823,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "great_hall": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Great Hall - a vast cold great hall full of courtiers in black, a king on an iron throne at the far end, a narrow stair winding up behind him.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. King Aldric: a tall, gaunt king with pale skin, sharp cold features, slicked-back black hair and cold grey eyes, wearing long black robes trimmed in crimson beneath a thin golden crown.\n\nMood and lighting: imposing grandeur, cold. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422578,
+      "orig_bytes": 1780009,
+      "engine_bytes": 366875,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "throne_approach": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: Toward the Throne - a farmer stepping out from the shadows as a court parts around him, the king's eyes finding him from an iron throne.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. King Aldric: a tall, gaunt king with pale skin, sharp cold features, slicked-back black hair and cold grey eyes, wearing long black robes trimmed in crimson beneath a thin golden crown.\n\nMood and lighting: spotlight, scrutiny. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422587,
+      "orig_bytes": 1701150,
+      "engine_bytes": 357043,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "throne_seen": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: Before the Throne - a cold-eyed king looking down at a farmer from his iron throne, amused, guards watching.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. King Aldric: a tall, gaunt king with pale skin, sharp cold features, slicked-back black hair and cold grey eyes, wearing long black robes trimmed in crimson beneath a thin golden crown.\n\nMood and lighting: cruel amusement. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422590,
+      "orig_bytes": 1751164,
+      "engine_bytes": 357528,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "spire_stairs": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Spire Stairs - a narrow winding stair climbing a dark tower, worn smooth, air thin and cold, shadow far below.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: ascending dread. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422594,
+      "orig_bytes": 1816362,
+      "engine_bytes": 354334,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "throne_demand": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Demand - a farmer stepping forward in a silent great hall to demand his wife, the king's smile fading as guards draw swords.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. King Aldric: a tall, gaunt king with pale skin, sharp cold features, slicked-back black hair and cold grey eyes, wearing long black robes trimmed in crimson beneath a thin golden crown.\n\nMood and lighting: defiance, tension. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422595,
+      "orig_bytes": 1635064,
+      "engine_bytes": 344288,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "spire": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Black Spire - a round high room lit by a fire with no wood, burning at the heart of a great iron device, a farmer's wife standing behind a shimmering veil.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. Lena the farmer's wife: a gentle, beautiful woman with long dark brown hair in a single braid, warm eyes and soft features, wearing a faded blue dress and a white apron dusted with flour.\n\nMood and lighting: otherworldly, humming light. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422616,
+      "orig_bytes": 1631855,
+      "engine_bytes": 355654,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "queen_ghost": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Queen's Ghost - a pale translucent woman in a white gown standing in the shadows of a dark tower room, warning a farmer.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Queen's Ghost: a pale, translucent woman with long dark hair and sad eyes, wearing a flowing white gown, faint and ethereal with a soft glow.\n\nMood and lighting: ghostly, soft glow. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422623,
+      "orig_bytes": 1708095,
+      "engine_bytes": 350843,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "spire_trap": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Spell - a farmer reaching for a humming iron device as the spell inside wakes like a snake of light.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: magical danger, searing. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422629,
+      "orig_bytes": 1605065,
+      "engine_bytes": 365946,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "wife_found": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: Your Wife - a farmer and his wife embracing behind a shimmering veil in a dark tower room, she pale and thin but alive.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. Lena the farmer's wife: a gentle, beautiful woman with long dark brown hair in a single braid, warm eyes and soft features, wearing a faded blue dress and a white apron dusted with flour.\n\nMood and lighting: relief, tender. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422630,
+      "orig_bytes": 1803535,
+      "engine_bytes": 367152,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "king_face": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The King - a cold-eyed king standing in the doorway of a tower room, dragon-fire flaring at his command, a farmer and his wife standing together.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. King Aldric: a tall, gaunt king with pale skin, sharp cold features, slicked-back black hair and cold grey eyes, wearing long black robes trimmed in crimson beneath a thin golden crown. Lena the farmer's wife: a gentle, beautiful woman with long dark brown hair in a single braid, warm eyes and soft features, wearing a faded blue dress and a white apron dusted with flour.\n\nMood and lighting: confrontation, fire flares. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422632,
+      "orig_bytes": 1644932,
+      "engine_bytes": 340645,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "king_fight": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Fight - a farmer lunging at a cold-eyed king as fire leaps to guard him, the room turning to heat and shadow, a fallen torch burning.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. King Aldric: a tall, gaunt king with pale skin, sharp cold features, slicked-back black hair and cold grey eyes, wearing long black robes trimmed in crimson beneath a thin golden crown.\n\nMood and lighting: violent, heat and shadow. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422654,
+      "orig_bytes": 1647124,
+      "engine_bytes": 364010,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "spell_break": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Unmaking - a farmer throwing himself at the heart of a great iron device, dragon-fire roaring around him.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: apocalyptic blaze. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422662,
+      "orig_bytes": 1722895,
+      "engine_bytes": 395545,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "escape_run": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Long Stair - a farmer and his wife running hand in hand down a winding tower stair, fire licking at their heels.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. Lena the farmer's wife: a gentle, beautiful woman with long dark brown hair in a single braid, warm eyes and soft features, wearing a faded blue dress and a white apron dusted with flour.\n\nMood and lighting: desperate flight. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422669,
+      "orig_bytes": 1723211,
+      "engine_bytes": 376392,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "good_punish": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The King Falls - a farmer driving a fallen torch at a cold-eyed king, the golden crown clattering away, dawn light breaking, his wife watching.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. King Aldric: a tall, gaunt king with pale skin, sharp cold features, slicked-back black hair and cold grey eyes, wearing long black robes trimmed in crimson beneath a thin golden crown. Lena the farmer's wife: a gentle, beautiful woman with long dark brown hair in a single braid, warm eyes and soft features, wearing a faded blue dress and a white apron dusted with flour.\n\nMood and lighting: victory, dawn. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422670,
+      "orig_bytes": 1741965,
+      "engine_bytes": 377286,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "dragon_ally": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Dragon's Chains - a farmer calling out to a vast dragon chained deep beneath a tower, the ancient beast lifting its head.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. The Dragon: a vast ancient dragon with emerald-green scales and a pale underbelly, huge leathery wings and golden knowing eyes, with smoke curling from its nostrils.\n\nMood and lighting: awakening, chains. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422670,
+      "orig_bytes": 1673352,
+      "engine_bytes": 367072,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "good_break_spell": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Unmade Spell - a farmer quenching a dragon-fire at the heart of a dying iron device as the veil falls, an old wizard looking on and a dragon flying away.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. Lena the farmer's wife: a gentle, beautiful woman with long dark brown hair in a single braid, warm eyes and soft features, wearing a faded blue dress and a white apron dusted with flour. The Wizard: a hunched old wizard with a long white beard, deep-set grey eyes and a weathered wrinkled face, wearing grey robes, leaning on a gnarled wooden staff. The Dragon: a vast ancient dragon with emerald-green scales and a pale underbelly, huge leathery wings and golden knowing eyes, with smoke curling from its nostrils.\n\nMood and lighting: liberation, light returns. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422690,
+      "orig_bytes": 1668087,
+      "engine_bytes": 370143,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "good_escape": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Long Road Home - a farmer and his wife running far from a distant black tower, reaching their farmhouse with a fire lit and the door barred.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. Lena the farmer's wife: a gentle, beautiful woman with long dark brown hair in a single braid, warm eyes and soft features, wearing a faded blue dress and a white apron dusted with flour.\n\nMood and lighting: safe haven, warm night. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422700,
+      "orig_bytes": 1569080,
+      "engine_bytes": 347734,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "good_dragon": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Dragon Freed - a vast dragon rising from beneath a collapsing black tower, shaking off its chains, circling in the morning sky as a farmer and his wife watch.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. Lena the farmer's wife: a gentle, beautiful woman with long dark brown hair in a single braid, warm eyes and soft features, wearing a faded blue dress and a white apron dusted with flour. The Dragon: a vast ancient dragon with emerald-green scales and a pale underbelly, huge leathery wings and golden knowing eyes, with smoke curling from its nostrils.\n\nMood and lighting: triumph, morning light. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422707,
+      "orig_bytes": 1989837,
+      "engine_bytes": 424505,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "wife_slain": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: She Is Gone - a farmer holding his fallen wife as a tower room burns down around them, the cold-eyed king standing over them.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. Lena the farmer's wife: a gentle, beautiful woman with long dark brown hair in a single braid, warm eyes and soft features, wearing a faded blue dress and a white apron dusted with flour. King Aldric: a tall, gaunt king with pale skin, sharp cold features, slicked-back black hair and cold grey eyes, wearing long black robes trimmed in crimson beneath a thin golden crown.\n\nMood and lighting: grief, fire consuming. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422708,
+      "orig_bytes": 1557198,
+      "engine_bytes": 347202,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "both_slain": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: Together - a farmer and a cold-eyed king falling together into a blaze, his wife's hand reaching for him.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands. King Aldric: a tall, gaunt king with pale skin, sharp cold features, slicked-back black hair and cold grey eyes, wearing long black robes trimmed in crimson beneath a thin golden crown. Lena the farmer's wife: a gentle, beautiful woman with long dark brown hair in a single braid, warm eyes and soft features, wearing a faded blue dress and a white apron dusted with flour.\n\nMood and lighting: tragic inferno. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422710,
+      "orig_bytes": 1671656,
+      "engine_bytes": 382223,
+      "dims": "1024x1024 -> 512x512"
+    },
+    "farmer_slain": {
+      "prompt": "Cinematic digital fantasy painting in a modern game-art style: dramatic lighting, rich saturated color, moody atmosphere, high detail, painterly brushwork, strong rim light and volumetric light, deep shadows, an epic fairytale mood.\n\nScene: The Door - a farmer shoving a heavy door closed, fire coming through the wood and stone and smoke.\n\nCharacters: The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.\n\nMood and lighting: sacrifice, fire and smoke. No text, no words, no watermark, no caption.",
+      "http": 200,
+      "created": 1790422728,
+      "orig_bytes": 1636781,
+      "engine_bytes": 371623,
+      "dims": "1024x1024 -> 512x512"
+    }
+  }
+}
