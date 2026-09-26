@@ -1,0 +1,52 @@
+========================================================================
+BLACK SPIRE - EXHAUSTIVE WALK COVERAGE REPORT (node 7)
+========================================================================
+scenes total  : 68
+choices total : 125
+death endings : 15
+good endings  : 4
+
+------------------------------------------------------------------------
+SCENE COVERAGE
+------------------------------------------------------------------------
+scenes visited : 68 / 68
+missing scenes : (none)
+
+------------------------------------------------------------------------
+ENDING COVERAGE
+------------------------------------------------------------------------
+death endings reached : 15 / 15
+  [death] both_slain       farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> wife_found -> king_face -> king_fight -> both_slain
+  [death] courtyard_death  farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_wall -> wall_climb -> courtyard -> courtyard_open -> courtyard_death
+  [death] dragon_attack    farm -> errand -> return -> road -> mountain -> mountain_ledge -> mountain_ridge -> dragon_pass -> dragon_parley -> dragon_attack
+  [death] dragon_caught    farm -> errand -> return -> road -> mountain -> mountain_ledge -> mountain_ridge -> dragon_pass -> dragon_sneak -> dragon_caught
+  [death] dragon_wrong     farm -> errand -> return -> road -> mountain -> mountain_ledge -> mountain_ridge -> dragon_pass -> dragon_parley -> dragon_riddle -> dragon_wrong
+  [death] dungeon_despair  farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> dungeon_despair
+  [death] farmer_slain     farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> wife_found -> escape_run -> farmer_slain
+  [death] gate_fight       farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_fight
+  [death] mountain_fall    farm -> errand -> return -> road -> mountain -> mountain_ledge -> mountain_fall
+  [death] river_wade       farm -> errand -> return -> road -> wood -> wood_river -> river_wade
+  [death] spire_trap       farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> spire_trap
+  [death] wall_fall        farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_wall -> wall_climb -> wall_fall
+  [death] wife_slain       farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> wife_found -> king_face -> spell_break -> wife_slain
+  [death] wolf_attack      farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wolf_attack
+  [death] wood_swamp       farm -> errand -> return -> road -> wood -> wood_light -> wood_swamp
+good endings reached  : 4 / 4
+  [good ] good_break_spell farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> wife_found -> king_face -> spell_break -> good_break_spell
+  [good ] good_dragon      farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> wife_found -> king_face -> dragon_ally -> good_dragon
+  [good ] good_escape      farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> wife_found -> escape_run -> good_escape
+  [good ] good_punish      farm -> errand -> return -> road -> wood -> wood_river -> wood_cross -> wood_wolf -> wood_edge -> gate -> gate_guards -> gate_talk -> dungeon -> passage -> spire_stairs -> spire -> wife_found -> king_face -> king_fight -> good_punish
+
+------------------------------------------------------------------------
+EDGE COVERAGE (every choice traversed)
+------------------------------------------------------------------------
+choices traversed : 125 / 125
+  every choice traversed exactly once: YES
+
+------------------------------------------------------------------------
+PROBLEMS (0)
+------------------------------------------------------------------------
+  (none)
+
+RESULT: PASS
+========================================================================

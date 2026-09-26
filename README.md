@@ -98,6 +98,14 @@ every scene plays its ambient bed, every choice triggers its mapped action
 sound, every death path tolls exactly one bell, and every sound asset is real
 and non-silent (ffprobe duration + ffmpeg loudness).
 
+The node-7 coverage test (`tests/test_coverage.py`) goes further: it drives the
+real integrated engine headless and performs an exhaustive edge-covering walk --
+it visits all 68 scenes and traverses all 125 choices exactly once, rendering
+each scene and landing, checking the ambient bed and action sound fire, and
+confirming every death (15) and good (4) ending is actually reached.  It emits a
+coverage report to `docs/coverage_report.txt` (+ `.json`), and it fails on any
+dangling choice, audio, or image reference.
+
 ## Story report
 
     .venv/bin/python tools/report_story.py            # print to stdout
@@ -125,6 +133,9 @@ reachability of every scene and ending, and a concrete path to each ending.
     tests/test_smoke.py        automated smoke test
     tests/test_audio.py        automated audio-layer test
     tests/test_images.py       image manifest + per-scene loader test
+    tests/test_coverage.py     exhaustive edge-covering walk + coverage report
+    black_spire/coverage.py    walk engine + coverage-report writer
+    docs/coverage_report.txt   emitted coverage report (+ .json)
 
 Art is intentionally low-effort placeholder in one consistent style - a later
 node owns the real art set.  Visual and sound *quality* are deferred to the
