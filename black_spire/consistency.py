@@ -8,6 +8,11 @@ image-perception tool in play:
 
   * the character sheet is well-formed: every recurring cast member has exactly
     one fixed, non-empty written description
+  * the single canonical source (``tools/generate_artset.py``'s embedded cast +
+    per-scene character data) is byte-for-byte what the committed artifacts say,
+    so the fixed descriptions cannot silently drift
+  * the in-code cast registry (``black_spire.characters``) mirrors the same one
+    description per character (no second, different description for anyone)
   * every story scene lists which recurring characters appear in it
     (``docs/scene_characters.json``), and each listed character is a known cast
     member with no duplicate or orphan entries
@@ -30,6 +35,7 @@ DOCS_DIR = os.path.join(REPO_ROOT, "docs")
 CHARACTER_SHEET_PATH = os.path.join(DOCS_DIR, "character_sheet.md")
 SCENE_CHARACTERS_PATH = os.path.join(DOCS_DIR, "scene_characters.json")
 IMAGE_PROMPTS_PATH = os.path.join(DOCS_DIR, "image_prompts.json")
+GENERATOR_PATH = os.path.join(REPO_ROOT, "tools", "generate_artset.py")
 
 # The recurring cast: canonical key -> the ``##`` heading used in the sheet.
 # This is the fixed cast order the story and the art both share.
@@ -93,10 +99,101 @@ def load_image_prompts(path=IMAGE_PROMPTS_PATH):
     return data.get("scenes", {})
 
 
+def load_generator_source(path=GENERATOR_PATH):
+    """Load the node-3 generator's canonical cast + scene data, or None.
+
+    ``tools/generate_artset.py`` embeds the fixed character descriptions and the
+    per-scene character list; it is the single source the committed artifacts
+    (character_sheet.md, scene_characters.json, image_prompts.json) were
+    generated from.  Importing it here is side-effect free (its ``main`` is
+    guarded by ``__name__ == "__main__"``), and it is stdlib-only.
+    """
+    if not os.path.exists(path):
+        return None
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("_blackspire_artset", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod.CHARACTERS, mod.SCENES, mod.build_prompt
+
+
 def characters_block(prompt):
     """Extract the ``Characters:`` block from a recorded prompt, or None."""
     match = _CHARACTERS_RE.search(prompt)
     return match.group(1) if match else None
+
+
+def validate_generator_source(scenes=None):
+    """Problems if the committed artifacts have drifted from the generator.
+
+    An empty list means the single canonical source (the node-3 generator's
+    fixed CHARACTERS + SCENES data) is byte-for-byte what the committed
+    character sheet, per-scene character map, and recorded image prompts say.
+    """
+    from . import story
+
+    if scenes is None:
+        scenes = story.SCENES
+
+    src = load_generator_source()
+    if src is None:
+        return ["generator source missing: %s" % GENERATOR_PATH]
+    gen_chars, gen_scenes, build_prompt = src
+    sheet = load_character_sheet()
+    scene_chars = load_scene_characters()
+    prompts = load_image_prompts()
+
+    problems = []
+    if set(gen_chars) != set(sheet):
+        problems.append("generator cast differs from the character sheet")
+    for key in sorted(set(gen_chars) & set(sheet)):
+        if gen_chars[key] != sheet[key]:
+            problems.append(
+                "character %r fixed description drifted between the generator "
+                "and the character sheet" % key)
+
+    if set(gen_scenes) != set(scenes):
+        problems.append("generator scene set differs from the story graph")
+    for sid in sorted(set(gen_scenes) & set(scenes)):
+        if sid not in scene_chars:
+            problems.append("scene %r has no character list" % sid)
+            continue
+        if gen_scenes[sid]["chars"] != scene_chars[sid]:
+            problems.append(
+                "scene %r character list drifted from the generator" % sid)
+
+    for sid in sorted(set(gen_scenes) & set(prompts)):
+        expected = build_prompt(sid)
+        if prompts[sid].get("prompt") != expected:
+            problems.append(
+                "scene %r recorded prompt drifted from the generator" % sid)
+
+    return problems
+
+
+def validate_cast_registry():
+    """``black_spire.characters`` must carry the ONE canonical description.
+
+    The in-code cast registry mirrors the same fixed written description as the
+    sheet; a second, different description for the same character is a bug.
+    """
+    from . import characters
+
+    sheet = load_character_sheet()
+    problems = []
+    keys = set(characters.CHARACTERS)
+    if keys != set(sheet):
+        problems.append(
+            "characters.py cast differs from the character sheet: "
+            "missing=%s extra=%s"
+            % (sorted(set(sheet) - keys), sorted(keys - set(sheet))))
+    for key in sorted(set(sheet) & keys):
+        desc = characters.CHARACTERS[key].get("description", "")
+        if desc != sheet[key]:
+            problems.append(
+                "characters.py %r has a second, different written description "
+                "than the canonical sheet" % key)
+    return problems
 
 
 def validate_character_consistency(scenes=None):
@@ -175,6 +272,11 @@ def validate_character_consistency(scenes=None):
     for key in CHARACTER_HEADINGS:
         if key not in used:
             problems.append("character %r appears in no scene" % key)
+
+    # 6. Single source of truth: the in-code cast registry and the committed
+    #    artifacts must agree with the canonical generator, byte-for-byte.
+    problems.extend(validate_cast_registry())
+    problems.extend(validate_generator_source(scenes))
 
     return problems
 

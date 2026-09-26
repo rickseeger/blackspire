@@ -7,6 +7,9 @@ the code level only -- no image-perception tool is used:
     disk, not a flat placeholder)
   * every recurring character is rendered from their fixed written description
     in every scene they appear in (verbatim injection, no drift, no orphan cast)
+  * the fixed descriptions are single-sourced: the in-code cast registry
+    (black_spire.characters), the committed character sheet, and the node-3
+    generator source all carry the SAME one description per character
 
 Subjective art quality is the human playtester's call, not this node's.
 """
@@ -21,7 +24,7 @@ import unittest
 
 import pygame
 
-from black_spire import art, consistency, story
+from black_spire import art, characters, consistency, story
 
 
 def setUpModule():
@@ -66,6 +69,26 @@ class CharacterConsistencyTests(unittest.TestCase):
             self.assertIsNotNone(block, "%s has no Characters block" % sid)
             expected = " ".join(sheet[key] for key in chars)
             self.assertEqual(block, expected, sid)
+
+    def test_generator_source_matches_committed_artifacts(self):
+        # The node-3 generator's embedded cast + per-scene character data is the
+        # single source; the committed sheet / scene map / recorded prompts must
+        # be byte-for-byte what it produces.
+        self.assertEqual(
+            consistency.validate_generator_source(story.SCENES), [])
+
+    def test_cast_registry_mirrors_canonical_sheet(self):
+        # black_spire.characters must carry the SAME one description per cast
+        # member -- no second, different written description for anyone.
+        self.assertEqual(consistency.validate_cast_registry(), [])
+
+    def test_one_fixed_description_per_character(self):
+        sheet = consistency.load_character_sheet()
+        self.assertEqual(set(characters.CHARACTERS), set(sheet))
+        for key, desc in sheet.items():
+            self.assertEqual(
+                characters.CHARACTERS[key]["description"], desc,
+                "%s has two different written descriptions" % key)
 
 
 class IllustrationWiringTests(unittest.TestCase):

@@ -34,7 +34,7 @@ Every choice leads to a coherent next beat; there are no dangling threads.  Run
 
 ### The cast
 
-The story keeps a fixed cast, each with a one-line description in
+The story keeps a fixed cast, each with one fixed written description in
 `black_spire/characters.py`: the farmer (you), Lena (your wife), the king, the
 wizard, the dragon, the old woman at the village, the neighbor, the guard
 captain, the serving girl, and the queen's ghost.
@@ -139,7 +139,7 @@ reachability of every scene and ending, and a concrete path to each ending.
 
     black_spire/          the app package (python3 -m black_spire)
       story.py            data-driven story graph (~68 scenes) + pure story engine
-      characters.py       character sheet (one-line descriptions + palettes)
+      characters.py       cast (fixed written descriptions + palettes)
       audio.py            layered audio (ambient bed / actions / death bell)
       art.py              per-scene illustration loader (image manifest)
       app.py              pygame window, layout, input, main loop
@@ -167,9 +167,14 @@ reachability of every scene and ending, and a concrete path to each ending.
 Every scene now carries a genuine AI illustration (OpenAI gpt-image-1, 1024x1024,
 with a 512x512 engine copy) in the locked cinematic digital fantasy style; the
 1024x1024 originals live under `assets/images/originals/`.  Each recurring
-character has ONE fixed written description (`docs/character_sheet.md`) injected
-verbatim into every scene prompt, and `tests/test_consistency.py` enforces that
-contract at the code level.  Visual and sound *quality* are still deferred to
+character has ONE fixed written description (`docs/character_sheet.md`), single-
+sourced from `tools/generate_artset.py` and mirrored in
+`black_spire/characters.py`, and injected verbatim into every scene prompt.
+`tests/test_consistency.py` enforces that contract at the code level: it walks
+the manifest, confirms every scene's art resolves to a real illustration, and
+asserts every recurring character is referenced by the same fixed description
+across the generator source, the character sheet, and every scene they appear
+in.  Visual and sound *quality* are still deferred to
 the human playtest, not gated here.
 
 ## Illustration manifest

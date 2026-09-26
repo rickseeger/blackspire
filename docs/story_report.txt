@@ -57,15 +57,15 @@ GOOD ENDINGS (4)
 ----------------------------------------------------------------------
 CAST (from characters.py)
 ----------------------------------------------------------------------
-  farmer     The Farmer (you)         A wiry, sun-browned man in a patched brown tunic, with calloused hands and tired, kind eyes.
-  wife       Lena, the Farmer's Wife  A gentle woman with dark braided hair and a faded blue dress, flour dusted on her hands.
-  king       King Aldric              A tall, cold-eyed king in black and crimson robes beneath a thin golden crown.
-  wizard     The Wizard               A hunched old wizard in gray robes with a gnarled staff and a long white beard.
-  dragon     The Dragon               A vast, green-scaled dragon with smoke curling from its nostrils and old, knowing eyes.
-  herald     The Old Woman            A bent old woman in a gray shawl, with a grip strong for her years and a crow's warning on her tongue.
-  neighbor   The Neighbor             A sturdy, worried villager in a wool coat who meets the farmer at his open door.
-  captain    The Guard Captain        A broad, scarred soldier in dark steel who carries the same grief he is ordered to enforce.
-  servant    The Serving Girl         A quick, kind serving girl in an apron, carrying a tray of bread and pretending not to see the farmer.
-  queen_ghost The Queen's Ghost        A pale, translucent woman in a white gown, sad-eyed, who warns the farmer of the stolen fire.
+  farmer     The Farmer (you)         The Farmer: a wiry man in his forties with sun-browned skin, short dark brown hair, a weathered kind face and tired eyes, wearing a patched brown linen tunic, grey-brown trousers and worn leather boots, with calloused hands.
+  wife       Lena (the farmer's wife) Lena the farmer's wife: a gentle, beautiful woman with long dark brown hair in a single braid, warm eyes and soft features, wearing a faded blue dress and a white apron dusted with flour.
+  king       King Aldric              King Aldric: a tall, gaunt king with pale skin, sharp cold features, slicked-back black hair and cold grey eyes, wearing long black robes trimmed in crimson beneath a thin golden crown.
+  wizard     The Wizard               The Wizard: a hunched old wizard with a long white beard, deep-set grey eyes and a weathered wrinkled face, wearing grey robes, leaning on a gnarled wooden staff.
+  dragon     The Dragon               The Dragon: a vast ancient dragon with emerald-green scales and a pale underbelly, huge leathery wings and golden knowing eyes, with smoke curling from its nostrils.
+  herald     The Old Woman            The Old Woman: a bent, frail old woman with white hair and a weathered wrinkled face, wearing a grey shawl over a dark dress, leaning on a wooden walking stick.
+  neighbor   The Neighbor             The Neighbor: a sturdy middle-aged villager with a worried face and a brown beard, wearing a brown wool coat over a plain linen shirt.
+  captain    The Guard Captain        The Guard Captain: a broad, scarred soldier with a shaved head and a short beard, grim expression, wearing dark steel armor and a black cloak.
+  servant    The Serving Girl         The Serving Girl: a quick, kind young serving girl with brown hair tied back, wearing a linen apron over a simple brown dress, carrying a tray of bread.
+  queen_ghost The Queen's Ghost        The Queen's Ghost: a pale, translucent woman with long dark hair and sad eyes, wearing a flowing white gown, faint and ethereal with a soft glow.
 
 ======================================================================
